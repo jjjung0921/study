@@ -22,7 +22,7 @@ TODO
 ## Last Checkpoint
 
 <!-- close commit 직전의 HEAD. `scripts/study-end.sh --set-checkpoint`가 기록한다. -->
-`<sha>`
+`2b5a8b9`
 
 ## Relevant Documents
 
