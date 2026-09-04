@@ -22,7 +22,7 @@
 
 ## Role Memory
 
-교재 근거 발췌(cs-book)·증명 검증과 설명(math-analyzer) 같은 역할로 작업할 때는 그 역할의 subject 전용 메모리 `.claude/agent-memory/<역할>/`를 쓴다. 어느 엔진이든 같은 폴더를 공유하며, 메모리는 세션을 연 디렉터리 기준이므로 세션은 이 폴더에서 연다.
+교재 근거 발췌(cs-book)·증명 검증과 설명(math-analyzer)·exercise 채점(study-grader) 같은 역할로 작업할 때는 그 역할의 subject 전용 메모리 `.claude/agent-memory/<역할>/`를 쓴다. 어느 엔진이든 같은 폴더를 공유하며, 메모리는 세션을 연 디렉터리 기준이므로 세션은 이 폴더에서 연다.
 
 - **Claude Code**: `memory: project` 서브에이전트가 `MEMORY.md`를 자동 로드하고 스스로 갱신한다.
 - **서브에이전트 메모리가 없는 엔진(Codex 등)**: 역할 스킬(`~/.codex/skills/<역할>/`)을 시작할 때 `.claude/agent-memory/<역할>/MEMORY.md`를 직접 읽고(없으면 첫 실행 — 시딩), 끝낼 때 `agent-memory-protocol` 스킬 절차로 갱신한다. Gemini는 읽지 않는다.
@@ -67,7 +67,8 @@
 | 개념 설명·질문 답변 — 한계→직관→정식화→경계→연결 5층, 핵심 유도는 힌트 사다리 | `concept-tutor` |
 | 학습자가 종료를 원할 때 자기 말 설명 검토 | `learning-coach`의 파인만 게이트 (학습자가 열자고 할 때만) |
 | Phase·목표를 마친 뒤 복습용 블로그 글 | `blog-coauthor` (이월 스토리의 시리즈는 `study-series`) |
-| exercise 출제·채점 | `self-exam` |
+| exercise 출제 | `self-exam` |
+| exercise 채점 — Rubric과 `전사 확인: OK`가 갖춰진 뒤 | `study-grader` 에이전트 (튜터와 다른 컨텍스트에서 Rubric·Attempt만으로 판정. 호출 프롬프트에 설명·기대 정답을 넣지 않는다. 없으면 튜터가 Rule 9로 직접) |
 | 오개념을 원인 → 잘못된 가정 → 개념 갭으로 좁힐 때 | `debug-to-concept` |
 | 논문·자료를 evidence로 정리할 때 | `paper-analysis`, `research-claim-check` |
 | 분야 지도·자료 탐색 | `research-survey` |
