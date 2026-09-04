@@ -17,7 +17,7 @@ Thumbs.db
 tmp/
 .cache/
 
-# Agent-local settings (공유 대상 아님)
+# Agent-local settings (공유 대상 아님) — .claude/agent-memory/ 는 프로젝트 지식이므로 추적한다
 .claude/settings.local.json
 
 # 손글씨 사진 원본 — 전사(exercise 파일)만 커밋한다 (Rule 10)

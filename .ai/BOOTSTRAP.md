@@ -49,7 +49,7 @@
 
 1. subject = concept map 하나를 공유하는 단위 (DR-0005). 목표에서 역방향으로 뽑을 개념들이 서로 선행 관계로 이어지면 이 폴더가 맞다. 이어지지 않는 덩어리가 둘이면 목표가 두 subject에 걸친 것이다 — 주된 쪽을 이 폴더로 하고 나머지 개념은 그 subject 폴더의 concept을 `evidence`로 가리킨다(`requires`에 넣지 않는다).
 2. 폴더 이름은 kebab-case 도메인 이름(`optimization`, `game-ai`, `web`)이며 포트폴리오 `field`보다 한 단계 아래 크기다. 워크스페이스는 목표·Phase를 계속 추가하며 오래 가므로, "이번 목표"의 이름(`bilevel-hypergradient`)을 폴더 이름으로 쓰지 않는다.
-3. 이미 `~/study/stories/`에 이 subject의 story가 있으면 Prior Knowledge의 근거이자 evidence 후보(`type: experiment`)다. 진단 exercise(U2)로 확인한 뒤에만 state에 반영한다.
+3. 이미 `~/study/stories/`에 이 subject의 story가 있으면 Prior Knowledge의 근거이자 evidence 후보(`type: experiment`)다. 진단 exercise(U2)로 확인한 뒤에만 state에 반영한다. 이 워크스페이스가 **스토리에서 새 분야를 열며** 클론된 것이면(`https://github.com/jjjung0921/Agent_Study.git`), Topic Description은 QUEUE 씨앗(하던 일 · 발견 계기 · 왜 중요 · 임시 대응)에서 오고 첫 목표는 "프로젝트의 그 판단을 사후 검증할 수 있다"가 된다.
 
 ### Goals
 

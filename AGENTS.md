@@ -18,6 +18,15 @@
 - 이 폴더 = subject 하나(`~/study/<subject>/`, concept map 하나를 공유하는 단위, DR-0005). 같은 폴더의 `why--<topic>.md` 같은 질문 원장은 스토리 측(`~/study/stories/`, 자체 AGENTS.md) 파일이며 concept state의 근거가 아니다 — 스토리의 개념이 목표와 이어지면 `concepts/`로 올린다. 다른 subject의 개념은 `requires`가 아니라 `evidence`로 그쪽 concept 파일을 가리키고, state는 그쪽이 기준이다
 - `.ai/CURRENT.md` 현재 상태·checkpoint · `.ai/HANDOFF.md` 세션 간 인수인계 · `.ai/LOG.md` 세션 기록(학습자 보고·속도 데이터) · `.ai/INBOX.md` 학습자 지시
 - `scripts/study-start.sh` 시작 절차 안내 · `scripts/study-end.sh` 종료 점검
+- `.claude/agent-memory/<역할>/` 교재 근거·수학 검증 역할(cs-book·math-analyzer 등)의 subject 전용 메모리 — 아래 **Role Memory**
+
+## Role Memory
+
+교재 근거 발췌(cs-book)·증명 검증과 설명(math-analyzer) 같은 역할로 작업할 때는 그 역할의 subject 전용 메모리 `.claude/agent-memory/<역할>/`를 쓴다. 어느 엔진이든 같은 폴더를 공유하며, 메모리는 세션을 연 디렉터리 기준이므로 세션은 이 폴더에서 연다.
+
+- **Claude Code**: `memory: project` 서브에이전트가 `MEMORY.md`를 자동 로드하고 스스로 갱신한다.
+- **서브에이전트 메모리가 없는 엔진(Codex 등)**: 역할 스킬(`~/.codex/skills/<역할>/`)을 시작할 때 `.claude/agent-memory/<역할>/MEMORY.md`를 직접 읽고(없으면 첫 실행 — 시딩), 끝낼 때 `agent-memory-protocol` 스킬 절차로 갱신한다. Gemini는 읽지 않는다.
+- 내용은 학습자의 반복 오류·이미 다룬 범위·이전 판정처럼 다시 도출할 수 없는 것만. 커밋 대상이지만 source of truth가 아니다(Truth 순서 ⑨와 같은 급) — concept `state`의 근거는 `exercises/`뿐이다(Rule 8). 손으로 고치지 않고, 틀리면 `.ai/INBOX.md`로 지시한다.
 
 ## Rules
 
@@ -54,6 +63,10 @@
 | 상황 | 스킬 (있으면) |
 |---|---|
 | 목표를 "할 수 있다" 문장과 증명 방법으로 바꿀 때 | `problem-framing` |
+| 학습 조율 프레임 — 당위성(기존 방식 → 한계 → 새 방식)·L0→L2 점진 심화·개념 연결(`~/study/concept-links.md`) | `learning-coach` (이 워크스페이스의 Rules·Session Procedure와 충돌하면 이 파일이 우선) |
+| 개념 설명·질문 답변 — 한계→직관→정식화→경계→연결 5층, 핵심 유도는 힌트 사다리 | `concept-tutor` |
+| 학습자가 종료를 원할 때 자기 말 설명 검토 | `learning-coach`의 파인만 게이트 (학습자가 열자고 할 때만) |
+| Phase·목표를 마친 뒤 복습용 블로그 글 | `blog-coauthor` (이월 스토리의 시리즈는 `study-series`) |
 | exercise 출제·채점 | `self-exam` |
 | 오개념을 원인 → 잘못된 가정 → 개념 갭으로 좁힐 때 | `debug-to-concept` |
 | 논문·자료를 evidence로 정리할 때 | `paper-analysis`, `research-claim-check` |

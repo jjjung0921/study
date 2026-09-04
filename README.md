@@ -31,7 +31,7 @@ AI Agent(Claude Code, Codex, Gemini CLI, ChatGPT 등)를 튜터로 삼아 공부
 
 ## How to Use This Template
 
-1. subject 폴더에 템플릿을 얹는다 — `cp -r ~/study/template/. ~/study/<subject>/` (또는 별도 저장소로 만들어 GitHub의 "Use this template"). **폴더는 subject마다 하나지만 템플릿은 "…를 할 수 있다"는 목표가 생겼을 때만 복사한다** (DR-0005). 스토리 원장만 있는 subject 폴더는 그대로 두고, 이미 원장(`why--<topic>.md` 등)이 있어도 이름이 겹치지 않으므로 그 위에 복사하면 된다. 스크립트는 상위 저장소(`~/study` vault) 안의 하위 폴더에서도, 독립 저장소에서도 동작한다. git 저장소가 아니면 변경 추적·checkpoint만 빠진다.
+1. subject 폴더에 템플릿을 얹는다 — `git clone https://github.com/jjjung0921/Agent_Study.git ~/study/<subject> && git -C ~/study/<subject> remote rename origin template` (원장만 있는 폴더가 이미 있으면 임시로 클론한 뒤 `cp -R /tmp/Agent_Study/. ~/study/<subject>/`; 또는 GitHub의 "Use this template"). 프로젝트에서 이월된 스토리(`~/study/stories/`)가 새 분야를 열 때도 같은 방법이다. **폴더는 subject마다 하나지만 템플릿은 "…를 할 수 있다"는 목표가 생겼을 때만 복사한다** (DR-0005). 스토리 원장만 있는 subject 폴더는 그대로 두고, 이미 원장(`why--<topic>.md` 등)이 있어도 이름이 겹치지 않으므로 그 위에 복사하면 된다. 스크립트는 상위 저장소(`~/study` vault) 안의 하위 폴더에서도, 독립 저장소에서도 동작한다. git 저장소가 아니면 변경 추적·checkpoint만 빠진다.
 2. `.ai/BOOTSTRAP.md`의 **Topic Description**에 주제·목적·기한·배경·시간 예산·자료를 적는다.
 3. 사용하는 AI Agent에게 `.ai/BOOTSTRAP.md`를 수행하라고 지시한다.
    Agent가 목표를 "할 수 있다" 문장과 증명 방법으로 바꾸고, 개념 목록과 선행 관계를 만들고, 자료를 evidence로 등록하고, Phase와 unit으로 나눈 뒤 `BOOTSTRAP.md`를 삭제한다.
@@ -77,6 +77,8 @@ AI Agent(Claude Code, Codex, Gemini CLI, ChatGPT 등)를 튜터로 삼아 공부
 ├── scripts/
 │   ├── study-start.sh         # 세션 시작: 예산, checkpoint 이후 변경, INBOX, 복습 만기, 준비된 unit, 속도·예상 완료, 오늘 구성 제안
 │   └── study-end.sh           # 세션 종료: 커밋·Status·checkpoint·HANDOFF·LOG 점검, state–근거 일치, 크기 상한
+├── .claude/
+│   └── agent-memory/          # 역할별(cs-book·math-analyzer…) subject 전용 메모리 — 엔진 공유, 커밋 대상 (README 참고)
 └── .ai/
     ├── CURRENT.md             # 현재 Phase·unit·Status·Progress·Last Checkpoint (항상 짧게)
     ├── HANDOFF.md             # 세션 → 다음 세션 인수인계 (덮어쓰기)
