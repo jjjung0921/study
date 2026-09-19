@@ -17,7 +17,7 @@
    이 폴더가 subject 폴더(`~/study/<subject>/`)인지 확인한다 — 아래 **Subject** 절. 이미 있는 스토리 원장(`why--<topic>.md` 등)과 `~/study/stories/`의 story는 학습자 파일이다(Rule 4): 고치지 않고, Prior Knowledge와 evidence 후보로만 읽는다.
 3. 목표를 정식화한다 — 아래 **Curriculum Design**의 Goals 절차를 따른다 (`problem-framing` 스킬이 있으면 사용). `LEARNING_GOALS.md`를 채운다: 목표마다 "…를 할 수 있다"와 Proof(capstone exercise), Non-Goals, Prior Knowledge(아직 state에 반영하지 않는다), Constraints.
 4. `LEARNER.md`를 채운다: 시간 예산, 배경, Input Preferences(수식 입력 경로 우선순위), Grading Preferences, Parameters(기본값을 학습자와 확인).
-5. 개념 목록을 만든다 — Curriculum Design의 Concepts 절차. `concepts/<slug>.md`를 `_template.md`에서 만들되 **Definition은 비워 둔다**(학습자 언어로 채워야 한다, Rule 4). Why It Matters·Verification Criteria(3–6개)·Connections는 채운다. state는 모두 `unseen`. `CONCEPT_MAP.md`에 그래프·Reading Order·Boundaries.
+5. 개념 목록을 만든다 — Curriculum Design의 Concepts 절차. `concepts/<slug>.md`를 `_template.md`에서 만들되 **Definition은 비워 둔다**(해당 unit에서 튜터가 초안을 쓰고 학습자가 검토한다, Rule 4·DR-0006). Why It Matters·Verification Criteria(3–6개)·Connections는 채운다. state는 모두 `unseen`. `CONCEPT_MAP.md`에 그래프·Reading Order·Boundaries.
 6. 근거 자료를 등록한다 — `evidence/INDEX.md`에 자료·유형·접근 경로·관련 개념 (`research-survey` 스킬이 있으면 사용). 접근 확인과 evidence 파일 생성은 Phase 01 U3에서 한다.
 7. 계획을 나눈다 — Curriculum Design의 Phases & Units 절차. `curriculum/ROADMAP.md`에 전체 Phase(Est 포함)를 등록하고, Phase 02(첫 학습 Phase)의 PLAN을 상세히 쓴다. Phase 01 PLAN의 Scope·Units를 주제에 맞게 조정한다.
 8. 다음 파일의 placeholder(`<...>`)와 작성 지침 주석을 주제 내용으로 교체한다: `AGENTS.md`(Subject, Commands의 Sandbox), `README.md`(템플릿 소개 → 주제 소개: 무엇을·왜·어떻게 진행하는지), `LEARNING_GOALS.md`, `LEARNER.md`.
