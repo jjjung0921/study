@@ -25,3 +25,5 @@ exercises/_inbox/*
 !exercises/_inbox/.gitkeep
 
 # Sandbox: 실험 도구에 맞게 초기화 시 추가한다 (예: __pycache__/, .venv/, .ipynb_checkpoints/, *.pyc)
+
+# blog/verify: 빌드·컴파일 산출물은 도구에 맞게 초기화 시 추가한다 (예: *.js, *.d.ts, *.js.map)

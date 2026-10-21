@@ -77,6 +77,10 @@ AI Agent(Claude Code, Codex, Gemini CLI, ChatGPT 등)를 튜터로 삼아 공부
 │   └── _inbox/                # 손글씨 사진 원본 (gitignore)
 ├── notes/                     # 튜터가 쓴 개념 설명(5층) — 이해 상태의 근거 아님 (DR-0006)
 │   └── README.md
+├── blog/                      # 복습용 포트폴리오 글 작업 공간 (blog-coauthor, source of truth 아님)
+│   ├── README.md
+│   ├── drafts/                 # ai:draft 초안 · 윤문 백업
+│   └── verify/                 # 글 코드 블록의 실행 검증 스크립트
 ├── sandbox/                   # 실험 코드 · 계산 · 노트북 (source of truth 아님)
 ├── scripts/
 │   ├── study-start.sh         # 세션 시작: 예산, checkpoint 이후 변경, INBOX, 복습 만기, 준비된 unit, 속도·예상 완료, 오늘 구성 제안

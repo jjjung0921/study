@@ -14,7 +14,7 @@
 ## Repository Map
 
 - `LEARNING_GOALS.md` 목표와 증명 방법 · `LEARNER.md` 학습자 파라미터 · `curriculum/ROADMAP.md` Phase 목록 · `curriculum/phases/` Phase PLAN/RESULT · `curriculum/decisions/` DR(결정 기록)
-- `concepts/` 개념 — 이해 상태의 유일한 자리 · `concepts/CONCEPT_MAP.md` 선행 관계 · `concepts/MISCONCEPTIONS.md` 오개념 · `evidence/` 근거 자료 · `exercises/` 시도·채점 기록 · `notes/` 튜터가 쓴 개념 설명 (이해 상태의 근거 아님, DR-0006) · `sandbox/` 실험 코드 (source of truth 아님)
+- `concepts/` 개념 — 이해 상태의 유일한 자리 · `concepts/CONCEPT_MAP.md` 선행 관계 · `concepts/MISCONCEPTIONS.md` 오개념 · `evidence/` 근거 자료 · `exercises/` 시도·채점 기록 · `notes/` 튜터가 쓴 개념 설명 (이해 상태의 근거 아님, DR-0006) · `sandbox/` 실험 코드 (source of truth 아님) · `blog/` 복습용 포트폴리오 글의 초안·검증 코드 (`blog-coauthor` 작업 공간, source of truth 아님)
 - 이 폴더 = subject 하나(`~/study/<subject>/`, concept map 하나를 공유하는 단위, DR-0005). 같은 폴더의 `why--<topic>.md` 같은 질문 원장은 스토리 측(`~/study/stories/`, 자체 AGENTS.md) 파일이며 concept state의 근거가 아니다 — 스토리의 개념이 목표와 이어지면 `concepts/`로 올린다. 다른 subject의 개념은 `requires`가 아니라 `evidence`로 그쪽 concept 파일을 가리키고, state는 그쪽이 기준이다
 - `.ai/CURRENT.md` 현재 상태·checkpoint · `.ai/HANDOFF.md` 세션 간 인수인계 · `.ai/LOG.md` 세션 기록(학습자 보고·속도 데이터) · `.ai/INBOX.md` 학습자 지시
 - `scripts/study-start.sh` 시작 절차 안내 · `scripts/study-end.sh` 종료 점검
@@ -66,7 +66,7 @@
 | 학습 조율 프레임 — 당위성(기존 방식 → 한계 → 새 방식)·L0→L2 점진 심화·개념 연결(`~/study/concept-links.md`)·개념 서술 초안·이해 확인 | `learning-coach` (이 워크스페이스의 Rules·Session Procedure와 충돌하면 이 파일이 우선) |
 | 개념 설명·질문 답변 — 한계→직관→정식화→경계→연결 5층(`notes/`에 기록), 핵심 유도만 힌트 사다리. 확인 질문은 학습자가 요청할 때만 | `concept-tutor` |
 | 학습자가 "내가 이해한 게 맞아?"라고 물을 때 | `learning-coach`의 이해 확인 — 한 번 검토(정확한 부분 → 어긋난 부분과 이유 → 교정된 이해)하고 끝낸다. 재질문하지 않으며 튜터가 먼저 요구하지 않는다. 어긋남은 `MISCONCEPTIONS.md` 후보와 다음 exercise 소재로 |
-| Phase·목표를 마친 뒤 복습용 블로그 글 | `blog-coauthor` (이월 스토리의 시리즈는 `study-series`) |
+| Phase·목표를 마친 뒤 복습용 블로그 글 → `blog/`에 초안 | `blog-coauthor` (이월 스토리의 시리즈는 `study-series`) |
 | exercise 출제 (unit에 계획됐거나 학습자가 원할 때; 설명 뒤 자동 미니 체크는 없다) | `self-exam` |
 | exercise 채점 — Rubric과 `전사 확인: OK`가 갖춰진 뒤 | `study-grader` 에이전트 (튜터와 다른 컨텍스트에서 Rubric·Attempt만으로 판정. 호출 프롬프트에 설명·기대 정답을 넣지 않는다. 없으면 튜터가 Rule 9로 직접) |
 | 오개념을 원인 → 잘못된 가정 → 개념 갭으로 좁힐 때 | `debug-to-concept` |
