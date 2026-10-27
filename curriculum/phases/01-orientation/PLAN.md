@@ -33,7 +33,7 @@ RAG는 검색·생성·평가·대화 연구가 섞여 있으므로, AICC 연구
 
 ## Units
 
-- [ ] U1. 학습 워크스페이스 초기화 — setup · est 30m · requires — · Done when: 목표·개념 지도·논문 목록·ROADMAP·Phase 02 PLAN이 주제에 맞게 작성됨
+- [x] U1. 학습 워크스페이스 초기화 — setup · est 30m · requires — · Done when: 목표·개념 지도·논문 목록·ROADMAP·Phase 02 PLAN이 주제에 맞게 작성됨 (commit d3eaddc)
 - [ ] U2. Prior Knowledge 진단 — practice · est 20m · requires U1 · Done when: LLM·embedding·Python 배경에 대한 low-cost exercise 기록이 있고 결과가 반영됨
 - [ ] U3. Phase 02 근거 자료 접근 확인 — learn · est 15m · requires U1 · Done when: survey·DPR·RAG·FiD 원문 접근과 evidence 파일 생성이 완료됨
 - [ ] U4. 스크립트·파라미터 확인 — setup · est 15m · requires U1 · Done when: `scripts/study-start.sh 30`과 `scripts/study-end.sh`가 예상 정보를 출력하고 임시 파라미터 확인 요청이 기록됨

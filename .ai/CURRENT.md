@@ -1,14 +1,12 @@
 # Current State
 
-<!-- 40줄 이내. Status: TODO | IN_PROGRESS | BLOCKED | REVIEW | DONE (정상 종료 시 IN_PROGRESS 금지). Progress는 step마다, 나머지는 세션 종료 시 갱신. -->
-
 ## Current Phase
 
 01-orientation — `curriculum/phases/01-orientation/PLAN.md`
 
 ## Current Unit
 
-U1. `.ai/BOOTSTRAP.md`를 수행해 템플릿을 실제 학습 프로젝트로 초기화
+U2. Prior Knowledge 진단
 
 ## Status
 
@@ -16,23 +14,22 @@ TODO
 
 ## Progress
 
-<!-- 현재 unit의 step ≤ 10개. 진행 중인 step 끝에 ← -->
-- (unit 시작 전)
+- [x] U1 학습 워크스페이스 초기화
+- [ ] U2 LLM·embedding·Python 배경 진단
 
 ## Last Checkpoint
 
-<!-- close commit 직전의 HEAD. `scripts/study-end.sh --set-checkpoint`가 기록한다. -->
-`2b5a8b9`
+`d3eaddc`
 
 ## Relevant Documents
 
-- `.ai/BOOTSTRAP.md`, `curriculum/phases/01-orientation/PLAN.md`, `LEARNING_GOALS.md`, `LEARNER.md`
+- `LEARNING_GOALS.md`, `LEARNER.md`, `curriculum/phases/01-orientation/PLAN.md`
 
 ## Recent Important Changes
 
-<!-- 최근 5개만 -->
-- 2026-08-29 템플릿 초기 생성 (DR-0001~0005). 아직 주제가 반영되지 않았다.
+- 2026-10-27 RAG 기초 → 평가 → AICC 다중 턴의 3단계 학습 경로를 만들었다.
+- 2026-10-27 10개 concept와 검증된 논문·벤치마크 11편을 등록했다.
 
 ## Next Action
 
-`.ai/BOOTSTRAP.md`의 Topic Description이 채워져 있으면 BOOTSTRAP 절차를 수행한다. 비어 있으면 학습자에게 주제 설명을 요청하고 멈춘다.
+U2에서 LLM·embedding·Python 배경을 low-cost diagnostic으로 확인하고, 임시 학습 파라미터를 학습자에게 확인한다.

@@ -1,18 +1,19 @@
 # Handoff
 
-<!-- 50줄 이내. unit 시작 시 Goal·Work In Progress를 먼저 쓰고(handoff-first) 진행하며 갱신, 종료 시 완성. 덮어쓴다(이력은 git log). 모든 항목을 채운다(없으면 "없음"). -->
-
-- From: claude-cowork — 템플릿 생성 세션
-- Date: 2026-08-29
-- Phase / Unit: 01-orientation / 시작 전 (unit 밖 작업)
+- From: codex — RAG 워크스페이스 초기화
+- Date: 2026-10-27
+- Phase / Unit: 01-orientation / U1 완료
 
 ## Goal
 
-개발 템플릿과 같은 규칙·상태 파일·스크립트 구조 위에서, 이해 상태가 exercise 기록에서만 도출되고 입력 비용·세션 길이 문제를 파일과 스크립트로 다루는 학습 템플릿을 만든다.
+RAG의 발전 과정을 학습하고 AICC 다중 턴 평가 연구로 이어지는 검증 가능한 학습 경로를 만든다.
 
 ## Work Completed
 
-- 저장소 구조, AGENTS/CLAUDE/GEMINI/README, LEARNING_GOALS·LEARNER, curriculum(ROADMAP·Phase 양식·Phase 01·DR-0001~0005), concepts·evidence·exercises·sandbox 양식, `.ai/` 상태 파일, `scripts/study-start.sh`·`study-end.sh`
+- G1–G3와 capstone, Non-Goals, 공개 자료 제약을 정의했다.
+- 10개 concept의 DAG와 Verification Criteria를 만들었다.
+- survey·DPR·RAG·FiD·Self-RAG·RAGAs·mtRAG 등 11편을 등록했다.
+- Phase 02의 12개 unit과 scope를 작성했다. 작업 커밋: `d3eaddc`.
 
 ## Work In Progress
 
@@ -20,10 +21,8 @@
 
 ## Decisions Made
 
-- 이해 상태는 exercise 기록에서만 도출, Rubric-first·strict default·grader 기록 — DR-0002
-- 학습자는 LaTeX를 치지 않는다; 입력 비용이 낮은 유형을 일상 검증에 — DR-0003
-- 세션은 선언된 예산으로 구성, unit 10–25분 + requires + est, LOG의 planned·actual로 속도 계산 — DR-0004
-- 폴더는 subject(concept map 단위)마다 하나, 템플릿 복사는 목표가 생길 때만; 스토리 원장과 같은 폴더 — DR-0005
+- 기초 검색·생성 → reliability·evaluation → conversational AICC 순서로 진행한다 — DR-0007.
+- Graph·multimodal·serving·음성 모델은 초기 범위에서 제외한다.
 
 ## Exercises Graded
 
@@ -35,14 +34,14 @@
 
 ## Open Questions
 
-- 없음
+- AICC의 우선 도메인(통신·금융·공공 등)은 Phase 04 전에 정한다.
 
 ## Unverified Assumptions
 
-- 주제가 아직 없다. 개념 단위로 나뉘는 주제(수학·CS·ML 이론)를 가정했다. 기능 습득형 주제는 exercise 유형을 다시 설계해야 한다.
-- 학습자 git이 `--trailer`(2.32+)를 지원한다고 가정한다. 스크립트는 Linux bash 5 + mawk/gawk에서 독립 저장소·상위 저장소의 하위 폴더·git 없음 세 경우를 테스트했다 (bash 3.2·BSD awk 호환 문법 사용, macOS에서는 미실행).
-- `LEARNER.md`의 파라미터 기본값(예산 30분, 복습 간격 3·7·21·60일)은 첫 몇 세션 뒤 조정이 필요하다.
+- 한 세션 30분, 입문 수준, 한국어 설명, 말·ASCII·Python 입력을 선호한다고 임시 가정했다.
+- LLM·embedding·Python 배경은 U2 diagnostic 전에는 concept state에 반영하지 않았다.
+- 실제 고객 데이터 없이 공개 벤치마크와 합성 상담 시나리오로 시작한다고 가정했다.
 
 ## Exact Next Action
 
-`.ai/BOOTSTRAP.md`의 Topic Description을 채운 뒤 튜터에게 수행을 지시한다. 튜터는 `scripts/study-start.sh`로 시작한다.
+U2 diagnostic을 만들고 학습자의 시간 예산·입력 선호를 확인한다. 그다음 U3에서 Phase 02 원문 접근과 evidence 파일을 준비한다.
