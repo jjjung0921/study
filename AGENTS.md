@@ -5,8 +5,8 @@
 
 ## Subject
 
-- Name: <학습 주제>
-- Outcome: <이 학습이 끝나면 무엇을 할 수 있어야 하는지 한 줄>
+- Name: Retrieval-Augmented Generation for AICC
+- Outcome: RAG의 검색·생성·평가 구조를 설명하고 AICC 다중 턴 상담용 평가 실험을 설계할 수 있다.
 - Learner: `LEARNER.md` (시간 예산 · 배경 · 입력 방식 · 파라미터)
 
 <!-- 초기화(.ai/BOOTSTRAP.md) 시 채운다. 목표 상세는 LEARNING_GOALS.md에 둔다. -->
@@ -52,7 +52,7 @@
 |---------|------------------------------------------|
 | Start   | `scripts/study-start.sh [minutes]`       |
 | End     | `scripts/study-end.sh --set-checkpoint`  |
-| Sandbox | `<실험 코드 실행 명령, 없으면 N/A>`      |
+| Sandbox | `python3 sandbox/<file>.py`               |
 
 <!-- 초기화 시 Sandbox 줄을 채운다 (예: `uv run python sandbox/<file>.py`). -->
 

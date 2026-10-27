@@ -1,69 +1,64 @@
 # Phase 01 — orientation
 
-<!-- 템플릿에 포함된 첫 Phase다. 초기화(.ai/BOOTSTRAP.md) 시 주제에 맞게 Scope·Units를 조정한다. -->
-
-- Status: PLANNED
-- Start: <YYYY-MM-DD> · End: <YYYY-MM-DD>
-- Goals: 전체 (목표 확정 자체가 이 Phase의 결과)
+- Status: IN_PROGRESS
+- Start: 2026-10-27 · End: 미정
+- Goals: 전체 목표의 학습 계약 확정
 
 ## Goal
 
-템플릿이 실제 학습 프로젝트가 되어, 목표마다 증명 방법이 있고, 개념 지도·근거 목록·학습자 파라미터가 갖춰지고, 어떤 튜터든 `scripts/study-start.sh`로 오늘 할 unit을 고를 수 있는 상태.
+RAG 학습 목표, 개념 지도, 검증된 논문 목록, 진단 계획과 세션 파라미터를 갖추고 첫 학습 Phase를 시작할 수 있다.
 
 ## Motivation
 
-이후 모든 Phase가 같은 규칙·기준·속도 데이터 위에서 진행되려면 그 기반이 먼저 있어야 한다. 이 Phase가 끝나기 전에는 개념 학습을 시작하지 않는다 — 단, 진단 exercise(U2)는 예외다.
+RAG는 검색·생성·평가·대화 연구가 섞여 있으므로, AICC 연구에 필요한 범위와 단계별 증명 방법을 먼저 고정한다.
 
 ## Scope
 
-- 템플릿 placeholder를 주제 내용으로 교체 (`AGENTS.md`, `README.md`, `LEARNING_GOALS.md`, `LEARNER.md`)
-- 개념 목록과 선행 관계(`concepts/`, `CONCEPT_MAP.md`), 근거 자료 목록(`evidence/INDEX.md`)
-- Prior Knowledge 진단 — 근거 없이 state를 올리지 않는다
-- 전체 계획을 Phase·unit으로 나누고 `ROADMAP.md`에 등록
-- 스크립트와 파라미터가 이 저장소에서 동작하는지 확인
+- 목표와 capstone 정의
+- 10개 개념의 선행 관계와 검증 기준
+- DPR·RAG·FiD부터 mtRAG·MTRAG-UN까지 읽기 자료 등록
+- Prior Knowledge 진단과 자료 접근 확인
+- Phase 02 상세 계획과 실행 스크립트 확인
 
 ## Out of Scope
 
-- 새 개념의 학습·설명 (Phase 02부터)
-- 자료 전체 읽기 (접근 확인과 목록만; 읽기는 해당 unit에서)
-- sandbox 환경의 세부 구성 (첫 coding exercise 전에 별도 unit으로)
+- 개념 설명과 논문 정독
+- 개념 state 승격
+- 실제 AICC 데이터 수집
 
 ## Dependencies
 
-- 학습자가 제공하는 주제 설명 (`.ai/BOOTSTRAP.md`의 Topic Description)
-- 목표·범위·시간 예산에 대한 학습자 확인
+- 사용자의 요청: RAG 발전 과정을 학습하고 AICC 연구로 연결
+- 공개 논문 접근
 
 ## Units
 
-<!-- 완료 시 [x]로 바꾸고 근거를 끝에 적는다: (commit abc1234) -->
-
-- [ ] U1. `.ai/BOOTSTRAP.md` 수행 — setup · est 40m · requires — · Done when: BOOTSTRAP의 Output Checklist 전부 충족
-- [ ] U2. Prior Knowledge 진단 — practice · est 20m · requires U1 · Done when: `LEARNING_GOALS.md` Prior Knowledge의 개념마다 low-cost exercise 기록이 있고, 통과한 것만 practiced/verified로 표시됨
-- [ ] U3. 근거 자료 확보 — learn · est 20m · requires U1 · Done when: `evidence/INDEX.md`의 자료가 접근 가능하고(파일·링크), Phase 02 Scope 개념의 evidence 파일이 있음 (status unread 허용)
-- [ ] U4. 스크립트·파라미터 확인 — setup · est 10m · requires U1 · Done when: `scripts/study-start.sh 20`이 복습·준비된 unit·remaining을 출력하고 `scripts/study-end.sh`가 FAIL 없이 통과
-- [ ] U5. Phase 02 PLAN 확정 — setup · est 15m · requires U2,U3,U4 · Done when: `ROADMAP.md`에 등록되고 `.ai/CURRENT.md`가 Phase 02 U1을 가리킴
+- [ ] U1. 학습 워크스페이스 초기화 — setup · est 30m · requires — · Done when: 목표·개념 지도·논문 목록·ROADMAP·Phase 02 PLAN이 주제에 맞게 작성됨
+- [ ] U2. Prior Knowledge 진단 — practice · est 20m · requires U1 · Done when: LLM·embedding·Python 배경에 대한 low-cost exercise 기록이 있고 결과가 반영됨
+- [ ] U3. Phase 02 근거 자료 접근 확인 — learn · est 15m · requires U1 · Done when: survey·DPR·RAG·FiD 원문 접근과 evidence 파일 생성이 완료됨
+- [ ] U4. 스크립트·파라미터 확인 — setup · est 15m · requires U1 · Done when: `scripts/study-start.sh 30`과 `scripts/study-end.sh`가 예상 정보를 출력하고 임시 파라미터 확인 요청이 기록됨
 
 ## Relevant Documents
 
-- `LEARNING_GOALS.md`, `LEARNER.md` — 전체 (작성 대상)
-- `concepts/_template.md`, `evidence/_template.md`, `exercises/README.md`
-- `curriculum/decisions/_template.md`
-- `.ai/BOOTSTRAP.md`
+- `LEARNING_GOALS.md`
+- `LEARNER.md`
+- `concepts/CONCEPT_MAP.md`
+- `evidence/INDEX.md`
+- `curriculum/phases/02-rag-foundations/PLAN.md`
+- `curriculum/decisions/DR-0007-rag-scope-and-reading-path.md`
 
 ## Acceptance Criteria
 
-- [ ] AC1. `AGENTS.md`, `README.md`, `LEARNING_GOALS.md`, `LEARNER.md`에 placeholder(`<...>`)와 작성 지침 주석이 남아 있지 않다
-- [ ] AC2. `LEARNING_GOALS.md`의 목표마다 Proof와 Phase가 있고, 모든 `concepts/*.md`에 `state`·`requires`가 있으며 `CONCEPT_MAP.md`와 일치한다
-- [ ] AC3. 진단 결과가 `exercises/`에 있고 practiced/verified 개념은 `verified_by`가 그 파일을 가리킨다 — `scripts/study-end.sh`가 FAIL 없이 통과
-- [ ] AC4. `evidence/INDEX.md`의 모든 자료에 유형·위치(경로 또는 링크)·관련 개념이 있고 접근이 확인되었다
-- [ ] AC5. `ROADMAP.md`의 Phase마다 Est가 있고 `scripts/study-start.sh`가 remaining과 projection을 출력한다
-- [ ] AC6. `.ai/BOOTSTRAP.md`가 삭제되었고 남은 참조가 없다
-- [ ] AC7. `LEARNER.md`의 Parameters가 학습자와 합의된 값이고, Input Preferences에 수식 입력 경로가 적혀 있다
+- [ ] AC1. G1–G3에 각기 다른 capstone과 Phase가 연결되어 있다.
+- [ ] AC2. 10개 concept의 `requires`와 CONCEPT_MAP이 일치한다.
+- [ ] AC3. 진단 exercise 결과 없이 concept state가 승격되지 않았다.
+- [ ] AC4. Phase 02 핵심 논문 네 편의 접근과 서지가 확인됐다.
+- [ ] AC5. 세션 예산·입력 선호가 학습자에게 확인됐다.
+- [ ] AC6. 시작·종료 스크립트가 FAIL 없이 실행된다.
 
 ## Validation Plan
 
-- AC1: `grep -n "<" AGENTS.md README.md LEARNING_GOALS.md LEARNER.md`의 출력에 placeholder·주석이 없는지 눈으로 확인
-- AC2·AC3: `scripts/study-end.sh` 실행 (state–근거 일치 검사 포함), `CONCEPT_MAP.md`의 화살표와 각 concept의 `requires` 대조
-- AC4: 자료마다 파일을 열거나 링크에 접근해 첫 페이지를 확인
-- AC5: `scripts/study-start.sh 20` 출력의 remaining·projection 줄 확인
-- AC6·AC7: 해당 파일의 존재·내용 확인
+- concept frontmatter와 Mermaid DAG를 정적 대조한다.
+- 논문 URL을 열어 제목·저자·연도를 확인한다.
+- U2에서 low-cost diagnostic을 별도 기록한다.
+- U4에서 스크립트 출력을 저장하지 않고 종료 코드와 FAIL 항목만 확인한다.

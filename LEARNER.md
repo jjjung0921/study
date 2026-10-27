@@ -1,39 +1,30 @@
 # Learner
 
-<!--
-학습자의 고정 파라미터. 튜터가 세션을 구성할 때 참조하고, Parameters는 스크립트가 읽는다.
-자주 바뀌는 것(오늘 컨디션·오늘 예산)은 여기가 아니라 .ai/INBOX.md에 적는다. 초기화 시 채운다.
--->
-
 ## Time Budget
 
-- Default session: `default_budget`분 · 최소 세션: `min_session`분 (회상 질문 1개)
-- Typical week: <요일별 예산 또는 "평일 20–30분, 주말 60분">
-- Velocity: 손으로 적지 않는다 — `scripts/study-start.sh`가 `.ai/LOG.md`의 planned·actual에서 계산한다
+- Default session: 30분 · 최소 세션: 5분 (회상 질문 1개)
+- Typical week: 미정. 한 세션 30분을 기본값으로 사용한다.
+- Velocity: 손으로 적지 않는다 — `scripts/study-start.sh`가 `.ai/LOG.md`의 planned·actual에서 계산한다.
 
 ## Background
 
-- <이미 아는 분야·수준, 쓰는 언어·도구, 학습 방식의 특징>
+- AI·메타러닝 연구와 Python 기반 실험 경험이 있다.
+- RAG의 체계적인 논문 계보와 평가 방법은 입문 수준으로 가정한다.
+- 목표는 제품 사용법보다 연구 질문과 검증 가능한 실험 설계를 만드는 것이다.
 
 ## Input Preferences
 
-<!-- Rule 10. 학습자는 LaTeX를 치지 않는다. 우선순위대로 적는다. -->
-
-- 수식: <손글씨 사진 / ASCII 수식 / 코드(sympy·numpy) / 말로 설명 — 우선순위>
-- 사진 위치: `exercises/_inbox/` (gitignore. 튜터가 전사한 뒤 `전사 확인: OK`를 받는다)
-- 설명: <한국어 / 영어 병기 여부>
-- 피하고 싶은 유형: <예: 긴 증명 타이핑>
+- 수식: 말로 설명 → ASCII 수식 → Python 코드 → 손글씨 사진 순으로 사용한다.
+- 사진 위치: `exercises/_inbox/` (gitignore. 튜터가 전사한 뒤 `전사 확인: OK`를 받는다.)
+- 설명: 한국어를 기본으로 하고 논문 용어는 영어를 병기한다.
+- 피하고 싶은 유형: 긴 수식이나 증명을 직접 LaTeX로 입력하는 과제
 
 ## Grading Preferences
 
-<!-- Rule 9의 기본값은 strict(부분=미통과, 애매하면 낮은 쪽)다. 바꾸려면 DR을 남긴다. -->
-
-- Default grader: <주로 쓰는 Agent 이름 — 예: claude-code>
-- 피드백 형식: <항목별 판정만 / 오답에 대한 힌트 포함>
+- Default grader: codex
+- 피드백 형식: Rubric 항목별 판정과 틀린 항목의 다음 힌트
 
 ## Parameters
-
-<!-- 스크립트와 규칙이 읽는 값. `- key: value` 형식과 key 이름을 바꾸지 않는다. review_intervals는 공백 구분(일). -->
 
 - default_budget: 30
 - min_session: 5

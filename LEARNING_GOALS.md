@@ -1,35 +1,33 @@
 # Learning Goals
 
-<!--
-최종적으로 무엇을 이해할 것인가. 초기화(.ai/BOOTSTRAP.md) 시 채운다.
-- 목표는 "…를 할 수 있다"로 적는다. 정의를 외우는 것은 목표가 아니다.
-- 목표마다 그것을 증명할 exercise(Proof)를 정한다. Phase의 capstone이 되고, Phase PLAN·concept·exercise는 여기서 파생된다.
-- Prior Knowledge는 근거 없이 state에 반영하지 않는다 (진단 exercise로 확인, Rule 8).
--->
-
 ## Why
 
-<왜 이것을 배우는가. 이 학습이 끝나면 무엇을 하려는가 — 연구·프로젝트·시험·업무.>
+AICC 연구를 시작하기 전에 RAG가 어떤 문제를 해결하며 발전했는지 원 논문으로 확인하고, 검색 성능과 답변 품질을 분리해 측정할 수 있는 기초를 만든다. 최종적으로는 다중 턴 상담에서 근거가 부족한 경우까지 다루는 작은 평가 실험을 설계한다.
 
 ## Goals
 
-<!-- Status: PLANNED | IN_PROGRESS | PROVEN. Proof는 exercise 유형과 조건을 구체적으로 (예: "새 문제 설정에서 hypergradient를 유도하고 수치로 검증한다 — transfer + coding"). -->
-
-| #  | Goal ("…를 할 수 있다")              | Proof (capstone exercise)                  | Phase | Status  |
-|----|--------------------------------------|--------------------------------------------|-------|---------|
-| G1 | <목표>                               | <증명 방법>                                | 02    | PLANNED |
-| G2 | <목표>                               | <증명 방법>                                | 03    | PLANNED |
+| # | Goal ("…를 할 수 있다") | Proof (capstone exercise) | Phase | Status |
+|---|---|---|---|---|
+| G1 | sparse·dense retrieval과 RAG·FiD의 정보 흐름을 비교하고 주어진 실패를 검색 또는 생성 단계에 귀속할 수 있다 | 처음 보는 QA 사례 6개를 단계별로 진단하고 근거를 설명한다 — transfer | 02 | PLANNED |
+| G2 | RAG의 검색 품질·근거 충실성·답변 정확성을 분리해 측정하는 실험을 구현할 수 있다 | 같은 질문 집합에 두 파이프라인을 실행하고 retrieval·generation 지표와 오류 표를 산출한다 — coding + transfer | 03 | PLANNED |
+| G3 | AICC 다중 턴 대화에서 맥락 의존·답변 불가·정책 충돌을 포함한 RAG 평가 프로토콜을 설계할 수 있다 | 공개 벤치마크 사례를 AICC 시나리오로 변환해 평가 항목·baseline·반증 조건을 작성한다 — transfer | 04 | PLANNED |
 
 ## Non-Goals
 
-- <이번에 배우지 않을 것. 하고 싶어지기 쉬운 것일수록 명시한다>
+- 대규모 벡터 데이터베이스 운영과 분산 인프라 최적화
+- 특정 상용 RAG 프레임워크 사용법 습득
+- 음성 인식·합성 및 full-duplex 음성 대화 모델
+- 실제 고객 개인정보나 기업 내부 상담 기록을 사용하는 실험
+- 모든 Graph RAG·multimodal RAG·agentic RAG 변형의 포괄적 조사
 
 ## Prior Knowledge
 
-<!-- 시작 시점에 이미 안다고 생각하는 개념. Phase 01의 진단 exercise로 확인한 뒤에만 practiced/verified로 표시한다. -->
-
-- <개념> — 근거: <어디서 배웠는가 / 써 본 경험>
+- LLM과 임베딩의 기본 개념을 접해 보았다고 가정한다 — 근거: 이전 AI 연구·학습 프로젝트 경험, Phase 01 진단 전에는 상태에 반영하지 않음
+- Python으로 작은 실험을 실행할 수 있다고 가정한다 — 근거: 기존 학습 저장소의 코드 기반 작업, Phase 01 진단 필요
+- 정보 검색 지표와 다중 턴 RAG는 처음 배우는 것으로 가정한다
 
 ## Constraints
 
-- <기한, 자료 접근(유료 논문·교재 유무), 도구·환경 제약. 시간 예산은 LEARNER.md에>
+- 공개 논문·공개 벤치마크·합성 상담 시나리오만 사용한다.
+- 논문의 성능 수치는 저자 보고값으로 취급하고 재현 전에는 검증된 개선으로 표현하지 않는다.
+- 학습 기간은 정하지 않았으며 세션 예산은 임시로 30분을 사용한다.

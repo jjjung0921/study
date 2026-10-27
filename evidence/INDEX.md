@@ -1,18 +1,20 @@
 # Evidence Index
 
-<!--
-근거 자료 목록. 각 자료의 상세(어느 개념의 어느 주장을 뒷받침하는지, 위치)는 `evidence/<slug>.md`에 둔다.
-- 초기화 시 목표·개념에서 역방향으로 필요한 자료를 등록한다 (`research-survey` 스킬이 있으면 사용). 접근 가능 여부를 Phase 01 U3에서 확인한다.
-- Type: paper | book | lecture | doc | derivation | experiment. Status: unread | reading | read.
-- 자료를 추가·제외하는 결정이 커리큘럼을 바꾸면 DR을 남긴다.
--->
-
-| Slug            | Title                       | Type   | Concepts          | Access                    | Status |
-|-----------------|-----------------------------|--------|-------------------|---------------------------|--------|
-| <slug>          | <제목>                      | paper  | <slug, slug>      | <URL 또는 로컬 경로>      | unread |
+| Slug | Title | Type | Concepts | Access | Status |
+|---|---|---|---|---|---|
+| gao-2023-rag-survey | Retrieval-Augmented Generation for Large Language Models: A Survey | paper | 전체 지도 | https://arxiv.org/abs/2312.10997 | unread |
+| karpukhin-2020-dpr | Dense Passage Retrieval for Open-Domain Question Answering | paper | sparse-dense-retrieval, retriever-reader-pipeline | https://aclanthology.org/2020.emnlp-main.550/ | unread |
+| lewis-2020-rag | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | paper | parametric-nonparametric-memory, retriever-reader-pipeline | https://arxiv.org/abs/2005.11401 | unread |
+| izacard-2021-fid | Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering | paper | passage-fusion | https://aclanthology.org/2021.eacl-main.74/ | unread |
+| asai-2024-self-rag | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection | paper | adaptive-retrieval, retrieval-generation-failures | https://arxiv.org/abs/2310.11511 | unread |
+| liu-2024-lost-middle | Lost in the Middle: How Language Models Use Long Contexts | paper | passage-fusion, retrieval-generation-failures | https://aclanthology.org/2024.tacl-1.9/ | unread |
+| es-2024-ragas | RAGAs: Automated Evaluation of Retrieval Augmented Generation | paper | rag-evaluation | https://aclanthology.org/2024.eacl-demo.16/ | unread |
+| saxton-2024-ares | ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems | paper | rag-evaluation | https://aclanthology.org/2024.naacl-long.20/ | unread |
+| katsis-2025-mtrag | mt RAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems | paper | conversational-query-context, answerability-abstention | https://aclanthology.org/2025.tacl-1.36/ | unread |
+| rosenthal-2026-mtrag-un | MTRAG-UN: A Benchmark for Open Challenges in Multi-Turn RAG Conversations | paper | conversational-query-context, answerability-abstention | https://aclanthology.org/2026.findings-acl.503/ | unread |
+| yao-2024-tau-bench | τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains | paper | aicc-rag-experiment-design | https://arxiv.org/abs/2406.12045 | unread |
 
 ## Not Used
 
-<!-- 검토했지만 쓰지 않기로 한 자료와 이유. 같은 자료를 다시 검토하지 않기 위해. -->
-
-- <제목> — <이유>
+- Graph RAG 및 multimodal RAG survey — AICC의 기본 검색·생성·다중 턴 평가를 먼저 다룬 뒤 필요할 때 확장한다.
+- 상용 벡터 데이터베이스 문서 — 특정 제품 사용법이 현재 학습 목표가 아니다.
