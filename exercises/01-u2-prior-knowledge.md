@@ -1,8 +1,19 @@
+---
+date: 2026-11-02
+concept: prior-knowledge
+type: recall
+purpose: diagnostic
+input: text
+cost: low
+est: 20
+actual:
+grader: study-grader
+result: fail
+---
+
 # U2 — Prior Knowledge 진단
 
 - Phase / Unit: 01 / U2
-- result: fail
-- grader: study-grader
 
 ## Problem
 
