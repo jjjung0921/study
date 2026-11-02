@@ -6,7 +6,7 @@
 
 ## Current Unit
 
-U2. Prior Knowledge 진단
+U4. 스크립트·파라미터 확인
 
 ## Status
 
@@ -15,11 +15,15 @@ TODO
 ## Progress
 
 - [x] U1 학습 워크스페이스 초기화
-- [ ] U2 LLM·embedding·Python 배경 진단
+- [x] U2 진단 문제와 채점 기준 준비
+- [x] 학습자 답변 전사 확인 및 채점 (`exercises/01-u2-prior-knowledge.md`, fail)
+- [ ] 학습 파라미터 확인
+- [x] U3 네 편 원문 접근·서지 대조
+- [x] U3 evidence 파일·INDEX 갱신
 
 ## Last Checkpoint
 
-`d3eaddc`
+`db8522f`
 
 ## Relevant Documents
 
@@ -32,4 +36,4 @@ TODO
 
 ## Next Action
 
-U2에서 LLM·embedding·Python 배경을 low-cost diagnostic으로 확인하고, 임시 학습 파라미터를 학습자에게 확인한다.
+U4에서 시작·종료 스크립트를 확인하고 임시 학습 파라미터를 학습자에게 확인한다.

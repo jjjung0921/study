@@ -1,8 +1,8 @@
 # Handoff
 
-- From: codex — RAG 워크스페이스 초기화
-- Date: 2026-10-27
-- Phase / Unit: 01-orientation / U1 완료
+- From: codex — U3 근거 자료 접근 확인
+- Date: 2026-11-02
+- Phase / Unit: 01-orientation / U3 완료
 
 ## Goal
 
@@ -11,13 +11,15 @@ RAG의 발전 과정을 학습하고 AICC 다중 턴 평가 연구로 이어지�
 ## Work Completed
 
 - G1–G3와 capstone, Non-Goals, 공개 자료 제약을 정의했다.
-- 10개 concept의 DAG와 Verification Criteria를 만들었다.
 - survey·DPR·RAG·FiD·Self-RAG·RAGAs·mtRAG 등 11편을 등록했다.
 - Phase 02의 12개 unit과 scope를 작성했다. 작업 커밋: `d3eaddc`.
+- U3의 네 편 공식 서지·PDF 접근을 확인하고 evidence 파일을 만들었다. 작업 커밋: `0210e0e`.
 
 ## Work In Progress
 
-- 없음
+- U4에서 시작·종료 스크립트와 임시 학습 파라미터를 확인한다.
+- U2 진단 Attempt 전사를 학습자가 확인했고, `study-grader`가 원래 Attempt를 세 항목 ✗, 종합 fail로 채점했다. 별도 Codex 리뷰도 항목 판정과 등급에 동의했다. 학습자가 후속 설명으로 의도를 명확히 했으며 원래 Attempt의 점수와 구분해 exercise에 기록했다.
+- 기존 RAG 블로그 초안과 검증 기록은 미커밋 학습자 변경으로 보존한다. 지정 대화 직접 읽기는 실패했다.
 
 ## Decisions Made
 
@@ -26,11 +28,12 @@ RAG의 발전 과정을 학습하고 AICC 다중 턴 평가 연구로 이어지�
 
 ## Exercises Graded
 
-- 없음
+- `exercises/01-u2-prior-knowledge.md` — 진단 fail, concept state 변경 없음
 
 ## Misconceptions Observed
 
-- 없음
+- 처음 채점 파일에 적힌 두 오개념 후보는 독립 리뷰와 학습자 후속 설명에 따라 철회했다. 확정된 오개념은 없다.
+- `study-grader` 역할 메모리의 `learner-patterns.md`에는 철회 전 추정이 남아 있어 다음 채점 역할 실행 시 exercise와 대조해 갱신해야 한다.
 
 ## Open Questions
 
@@ -44,4 +47,4 @@ RAG의 발전 과정을 학습하고 AICC 다중 턴 평가 연구로 이어지�
 
 ## Exact Next Action
 
-U2 diagnostic을 만들고 학습자의 시간 예산·입력 선호를 확인한다. 그다음 U3에서 Phase 02 원문 접근과 evidence 파일을 준비한다.
+U4에서 시작·종료 스크립트와 임시 시간 예산·입력 선호를 확인한다.
