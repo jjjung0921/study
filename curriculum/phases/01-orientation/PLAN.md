@@ -35,7 +35,7 @@ RAG는 검색·생성·평가·대화 연구가 섞여 있으므로, AICC 연구
 
 - [x] U1. 학습 워크스페이스 초기화 — setup · est 30m · requires — · Done when: 목표·개념 지도·논문 목록·ROADMAP·Phase 02 PLAN이 주제에 맞게 작성됨 (commit d3eaddc)
 - [ ] U2. Prior Knowledge 진단 — practice · est 20m · requires U1 · Done when: LLM·embedding·Python 배경에 대한 low-cost exercise 기록이 있고 결과가 반영됨
-- [ ] U3. Phase 02 근거 자료 접근 확인 — learn · est 15m · requires U1 · Done when: survey·DPR·RAG·FiD 원문 접근과 evidence 파일 생성이 완료됨
+- [x] U3. Phase 02 근거 자료 접근 확인 — learn · est 15m · requires U1 · Done when: survey·DPR·RAG·FiD 원문 접근과 evidence 파일 생성이 완료됨 (`evidence/INDEX.md`와 연결된 네 파일)
 - [ ] U4. 스크립트·파라미터 확인 — setup · est 15m · requires U1 · Done when: `scripts/study-start.sh 30`과 `scripts/study-end.sh`가 예상 정보를 출력하고 임시 파라미터 확인 요청이 기록됨
 
 ## Relevant Documents
@@ -52,7 +52,7 @@ RAG는 검색·생성·평가·대화 연구가 섞여 있으므로, AICC 연구
 - [ ] AC1. G1–G3에 각기 다른 capstone과 Phase가 연결되어 있다.
 - [ ] AC2. 10개 concept의 `requires`와 CONCEPT_MAP이 일치한다.
 - [ ] AC3. 진단 exercise 결과 없이 concept state가 승격되지 않았다.
-- [ ] AC4. Phase 02 핵심 논문 네 편의 접근과 서지가 확인됐다.
+- [x] AC4. Phase 02 핵심 논문 네 편의 접근과 서지가 확인됐다.
 - [ ] AC5. 세션 예산·입력 선호가 학습자에게 확인됐다.
 - [ ] AC6. 시작·종료 스크립트가 FAIL 없이 실행된다.
 
