@@ -1,0 +1,75 @@
+{
+  "verdict": "accept",
+  "genre": "blog",
+  "strength": "conservative",
+  "correction_count": 0,
+  "fidelity_violations": [],
+  "overediting": [],
+  "change_rate": {
+    "rate": 0.0074,
+    "percent": 0.74,
+    "source": "verify/humanize-gates-initial.txt"
+  },
+  "gate": {
+    "verdict": "WARN",
+    "exit_code": 1,
+    "preserved": true,
+    "golden_failures": 3
+  },
+  "grade": "C",
+  "self_check": {
+    "passed": 5,
+    "total": 6,
+    "unconfirmed": [
+      "S1 잔존 0건"
+    ]
+  },
+  "warning_review": {
+    "code": "footnote_anchor",
+    "reported_labels": [
+      "2)",
+      "9)",
+      "2)"
+    ],
+    "numeric_vectors": [
+      "(0.3,0.5,0.2)",
+      "(0.05,0.05,0.9)",
+      "(0.4,0.4,0.2)"
+    ],
+    "direct_comparison": "원문과 윤문본 벡터 표 전체가 동일하며 해당 각주 자체가 원문에 없다.",
+    "identity_control": "동일입력 before/after에서도 동일한 3개 경고가 발생한다.",
+    "interpretation": "이번 윤문에 의한 각주 이동 증거는 발견되지 않았다. 숫자 벡터의 괄호 끝을 각주로 읽는 검사 한계로 판단하며 원시 WARN 판정은 유지한다."
+  },
+  "preserved": [
+    "frontmatter",
+    "all math",
+    "table rows",
+    "numeric sequence",
+    "direct quotes",
+    "source brackets",
+    "links",
+    "headings",
+    "ai:draft markers"
+  ],
+  "character_counts": {
+    "original": 10174,
+    "final_without_summary": 10168,
+    "basis": "Python len; final body has one trailing newline"
+  },
+  "residual_findings": [
+    "ending_comma_rate z +3.27 → +1.10: 부분 개선",
+    "C-8 1 → 0: 원문 대구 5건 미만으로 검사 스킵",
+    "blog baseline fallback to essay"
+  ],
+  "scope": "윤문 의미 드리프트 검토; 논문 사실 수정은 별도",
+  "limitations": [
+    "논문 사실과 수학적 타당성 미검증",
+    "모델 학습 및 공식 구현·실험 미재현",
+    "게이트의 각주 탐지 WARN 유지"
+  ],
+  "workspace_check": {
+    "command": "python3 ~/.agents/scripts/check-workspace.py --workspace ~/study/RAG/blog --git-root ~/study/RAG",
+    "exit_code": 0
+  },
+  "backup": "final_pre_finalize.md"
+}

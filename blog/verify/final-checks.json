@@ -1,0 +1,22 @@
+{
+  "preservation": {
+    "frontmatter": true,
+    "math": true,
+    "tables": true,
+    "numbers": true,
+    "links": true,
+    "source_labels": true,
+    "direct_quotes": true,
+    "draft_markers": true
+  },
+  "ai_draft_sections": 10,
+  "all_body_marked": true,
+  "frontmatter_required_fields": true,
+  "duplicate_translationKey": [],
+  "math_occurrences": 47,
+  "sha256": "b9362a0e447501eabbf75f190b9d9079c1846bab10c658e076057035b123bfe5",
+  "main_content_changes": [
+    "unsupported personal belief replaced with QA question",
+    "i defined as token position"
+  ]
+}

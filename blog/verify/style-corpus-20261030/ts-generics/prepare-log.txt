@@ -1,0 +1,5 @@
+run_dir=/Users/leejungjin/study/RAG/blog/verify/style-corpus-20261030/ts-generics
+combined=/Users/leejungjin/study/RAG/blog/verify/style-corpus-20261030/ts-generics/01_input_with_metrics.txt
+risk_band=low  risk_score=3
+route_hint=standard
+degraded=False

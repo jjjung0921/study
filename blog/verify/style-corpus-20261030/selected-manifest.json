@@ -1,0 +1,73 @@
+[
+  {
+    "id": "ts-type-check",
+    "path": "~/projects/portfolio/src/content/notes/ko/typescript/ts-type-check.md",
+    "sha256": "d4a32f26f1e798c50373f900773d80803114efd8d7e8818298a855951cb570ce",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        122
+      ],
+      [
+        174,
+        207
+      ],
+      [
+        476,
+        509
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "ts-generics",
+    "path": "~/projects/portfolio/src/content/notes/ko/typescript/ts-generics.md",
+    "sha256": "c2c24e6a0678f2b086e65eaeae355b824fa6303d2c70e5433025d20d0eb0614c",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        99
+      ],
+      [
+        153,
+        283
+      ],
+      [
+        372,
+        378
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "performative-prediction",
+    "path": "~/projects/portfolio/src/content/notes/ko/AI/performative-prediction/performative-prediction.md",
+    "sha256": "ad19e226568a122c8431b767122fa2ec485aefcd40ffdf66645d3f8e621d4828",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        64
+      ],
+      [
+        84,
+        97
+      ],
+      [
+        228,
+        251
+      ],
+      [
+        351,
+        391
+      ],
+      [
+        399,
+        407
+      ]
+    ],
+    "metrics_exit_code": 0
+  }
+]

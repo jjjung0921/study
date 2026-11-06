@@ -1,0 +1,20 @@
+{
+  "title": "RAG의 합과 곱은 무엇을 계산하는가",
+  "lang": "ko",
+  "translationKey": "rag-sequence-token-marginalization",
+  "date": "2026-10-30",
+  "field": "ai",
+  "category": "paper-reading",
+  "status": "draft",
+  "summary": "원본 RAG 논문의 Sequence와 Token을 같은 숫자 예제로 계산하고, 확률 벡터·학습·디코딩이 연결되는 지점을 정리한다.",
+  "problem": "RAG-Sequence와 RAG-Token에서 문서에 대한 합과 토큰에 대한 곱은 각각 무엇을 계산하며, 그 순서는 왜 다른가?",
+  "coreIdea": "Sequence는 문서별 전체 출력 확률을 혼합하고, Token은 각 위치의 다음 토큰 분포를 혼합한다. 같은 후보를 평가해도 문서를 잠재 변수로 두는 범위에 따라 확률이 달라진다.",
+  "connection": "잠재 변수, 주변화, 자기회귀 생성, 검색 감독과 답변 감독, beam search",
+  "tags": [
+    "RAG",
+    "NLP",
+    "paper",
+    "probability",
+    "retrieval"
+  ]
+}

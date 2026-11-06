@@ -1,0 +1,70 @@
+[P0 문자율] 0.7% [전문] — OK (경고 30% / 중단 50%)
+[P1 목표달성] ending_comma_rate: z +3.27 → +1.10  부분 개선
+[P2 전멸] C-8 대구 1 → 0 — 스킵 (원문 대구 < 5)
+[P3 golden] FAIL — 3건:
+    FAIL [footnote_anchor] 각주 2)이 원위치를 벗어났습니다 (인접 수치 앵커 '0.3,0.5,0' → '0'): 인용 출처 변조 위험
+    FAIL [footnote_anchor] 각주 9)이 원위치를 벗어났습니다 (인접 수치 앵커 '0.05,0.05,0' → '0'): 인용 출처 변조 위험
+    FAIL [footnote_anchor] 각주 2)이 원위치를 벗어났습니다 (인접 수치 앵커 '0.4,0.4,0' → '0'): 인용 출처 변조 위험
+[P4 터치율] 4.9% (14/285 문장) — 보고 전용
+[P5 서법] 소실 0문장 (참고 총수: 당위 8→8 / 완곡 9→9) — OK
+gate: WARN — 경고. 사용자 고지 + finalize 승급
+{
+  "genre": "blog",
+  "change_rate": {
+    "rate": 0.0074,
+    "scope": "전문",
+    "verdict": "OK"
+  },
+  "s1_targets": [
+    {
+      "metric": "ending_comma_rate",
+      "z_before": 3.27,
+      "z_after": 1.1,
+      "verdict": "부분 개선"
+    }
+  ],
+  "antithesis": {
+    "before": 1,
+    "after": 0,
+    "verdict": "스킵 (원문 대구 < 5)"
+  },
+  "golden": [
+    {
+      "code": "footnote_anchor",
+      "message": "각주 2)이 원위치를 벗어났습니다 (인접 수치 앵커 '0.3,0.5,0' → '0'): 인용 출처 변조 위험"
+    },
+    {
+      "code": "footnote_anchor",
+      "message": "각주 9)이 원위치를 벗어났습니다 (인접 수치 앵커 '0.05,0.05,0' → '0'): 인용 출처 변조 위험"
+    },
+    {
+      "code": "footnote_anchor",
+      "message": "각주 2)이 원위치를 벗어났습니다 (인접 수치 앵커 '0.4,0.4,0' → '0'): 인용 출처 변조 위험"
+    }
+  ],
+  "sentence_touch": {
+    "rate": 0.0491,
+    "touched": 14,
+    "total": 285
+  },
+  "numbers_dropped": [],
+  "modality": {
+    "lost_pairs": [],
+    "uncertain_pairs": [],
+    "counts": {
+      "deontic": {
+        "before": 8,
+        "after": 8
+      },
+      "hedge": {
+        "before": 9,
+        "after": 9
+      }
+    },
+    "verdict": "OK"
+  },
+  "gate": {
+    "verdict": "WARN — 경고. 사용자 고지 + finalize 승급",
+    "exit_code": 1
+  }
+}

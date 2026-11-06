@@ -1,0 +1,6 @@
+Command: python3 ~/.agents/skills/humanize-korean/scripts/verify_change_rate.py --before ~/study/RAG/blog/drafts/rag-sequence-token-marginalization.pre-three-post-style.md --after ~/study/RAG/blog/drafts/rag-sequence-token-marginalization.md
+Exit code: 0
+change_rate: 0.6%  [전문]
+gate: OK — 수렴  (경고 30% / 중단 50%)
+
+This is the change-rate gate only, not the complete humanize gate pipeline or a writing-style similarity score.

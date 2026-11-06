@@ -1,0 +1,54 @@
+{
+  "preservation": {
+    "frontmatter": {
+      "count": 1,
+      "unchanged": true
+    },
+    "math": {
+      "count": 47,
+      "unchanged": true
+    },
+    "tables": {
+      "count": 41,
+      "unchanged": true
+    },
+    "inline_code": {
+      "count": 8,
+      "unchanged": true
+    },
+    "links": {
+      "count": 2,
+      "unchanged": true
+    },
+    "titles": {
+      "count": 16,
+      "unchanged": true
+    },
+    "comments": {
+      "count": 20,
+      "unchanged": true
+    },
+    "direct_quotes": {
+      "count": 10,
+      "unchanged": true
+    },
+    "source_labels": {
+      "count": 11,
+      "unchanged": true
+    },
+    "numbers": {
+      "count": 130,
+      "unchanged": true
+    }
+  },
+  "ai_draft_sections": 10,
+  "outside_draft_unchanged": true,
+  "portfolio_sources_unchanged": {
+    "ts-type-check": true,
+    "ts-generics": true,
+    "performative-prediction": true
+  },
+  "before_sha256": "b9362a0e447501eabbf75f190b9d9079c1846bab10c658e076057035b123bfe5",
+  "after_sha256": "cd1fa5057ad6fe7738dece27f2b6458427fa4a9b6791b09433100a19e6cb5ca2",
+  "previous_katex_schema_proof": "47 formula strings and frontmatter unchanged; previous render-schema-checks.json applies. No site build or browser recheck."
+}

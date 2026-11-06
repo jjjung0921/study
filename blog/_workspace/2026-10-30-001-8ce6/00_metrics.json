@@ -1,0 +1,106 @@
+{
+  "version": "v2.0",
+  "genre": "blog",
+  "char_count": 10174,
+  "metrics": {
+    "comma_inclusion_rate": 0.16140350877192983,
+    "comma_usage_rate": 0.24561403508771928,
+    "ending_comma_rate": 0.2978723404255319,
+    "comma_segment_length": 6.047887323943662,
+    "conclusion_pivot_count": 2,
+    "safe_balance_count": 0,
+    "hanja_nominalizer_density": 0.004227336777829967,
+    "lexical_diversity": 0.5209018318459371
+  },
+  "z_scores": {
+    "comma_inclusion_rate": -0.5858092812676853,
+    "comma_usage_rate": -1.2369034474297629,
+    "ending_comma_rate": 3.266018314374214,
+    "comma_segment_length": 0.8065973035361816,
+    "hanja_nominalizer_density": -1.8590887740723343,
+    "lexical_diversity": -2.5819633630812593
+  },
+  "risk_band": "medium",
+  "risk_score": 4,
+  "evidence": {
+    "conclusion_pivots": [
+      "따라서"
+    ],
+    "safe_balances": []
+  },
+  "warning": "baseline_genre_null:blog->essay",
+  "v2_metrics": {
+    "lexical_diversity_ttr": 0.5209018318459371,
+    "lexical_density": 0.054015969938938466,
+    "ending_diversity": 0.2826086956521739,
+    "normalisation_score": 0.20701754385964913,
+    "da_streak_rate": 14,
+    "inanimate_subject_rate": 0.0,
+    "by_passive_count": 1,
+    "double_passive_count": 0,
+    "pronoun_density": 0.0,
+    "deul_overuse_rate": 0.0,
+    "relative_clause_nesting": 7,
+    "have_make_literal_count": 0,
+    "double_particle_count": 1,
+    "progressive_aspect_rate": 0.0035087719298245615,
+    "antithesis_count": 1
+  },
+  "v2_interference_index": {
+    "components": {
+      "T1_inanimate_subject_rate": 0.0,
+      "T2a_by_passive_per_1k": 0.09828975820719482,
+      "T2b_double_passive_per_1k": 0.0,
+      "T3_pronoun_density": 0.0,
+      "T4_deul_overuse_rate": 0.0,
+      "T5_nested_clause_count": 7,
+      "T6_have_make_per_1k": 0.0,
+      "T7_double_particle_per_1k": 0.09828975820719482,
+      "T8b_progressive_rate": 0.0035087719298245615
+    },
+    "weighted_total": 0.422311602674861,
+    "n_sentences": 285,
+    "n_chars": 10174
+  },
+  "v2_z_scores": {
+    "lexical_diversity_ttr": -0.9887271019257862,
+    "lexical_density": -2.699800375763269,
+    "ending_diversity": -3.061594202898551,
+    "normalisation_score": -1.0721247563352827,
+    "da_streak_rate": 22.833333333333332,
+    "inanimate_subject_rate": -1.3333333333333335,
+    "by_passive_count": 1.0,
+    "double_passive_count": -0.4,
+    "pronoun_density": -1.4999999999999998,
+    "deul_overuse_rate": -0.5714285714285714,
+    "relative_clause_nesting": 17.0,
+    "have_make_literal_count": -0.4285714285714286,
+    "double_particle_count": 1.6,
+    "progressive_aspect_rate": -1.1649122807017542,
+    "antithesis_count": null
+  },
+  "v2_baseline_warnings": [
+    "lexical_diversity_ttr",
+    "lexical_density",
+    "ending_diversity",
+    "normalisation_score",
+    "da_streak_rate",
+    "inanimate_subject_rate",
+    "by_passive_count",
+    "double_passive_count",
+    "pronoun_density",
+    "deul_overuse_rate",
+    "relative_clause_nesting",
+    "have_make_literal_count",
+    "double_particle_count",
+    "progressive_aspect_rate"
+  ],
+  "route_hint": "standard",
+  "route_reason": "카운트형 티 4건 · risk_band medium — 진단 + 단일 윤문 권장",
+  "route_signals": {
+    "lexical_tell_count": 4,
+    "v26_tells": {},
+    "risk_band": "medium",
+    "char_count": 10174
+  }
+}

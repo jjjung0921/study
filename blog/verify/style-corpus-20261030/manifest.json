@@ -1,0 +1,116 @@
+[
+  {
+    "id": "ts-intro",
+    "path": "~/projects/portfolio/src/content/notes/ko/typescript/ts-intro.md",
+    "sha256": "8dd391fa0de61192cbf29204be89813a1bad57c4675d16e4e4827fe3be9438b9",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        88
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "ts-type-check",
+    "path": "~/projects/portfolio/src/content/notes/ko/typescript/ts-type-check.md",
+    "sha256": "d4a32f26f1e798c50373f900773d80803114efd8d7e8818298a855951cb570ce",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        122
+      ],
+      [
+        476,
+        509
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "ts-generics",
+    "path": "~/projects/portfolio/src/content/notes/ko/typescript/ts-generics.md",
+    "sha256": "c2c24e6a0678f2b086e65eaeae355b824fa6303d2c70e5433025d20d0eb0614c",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        99
+      ],
+      [
+        240,
+        283
+      ],
+      [
+        372,
+        378
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "ts-type-argument-inference",
+    "path": "~/projects/portfolio/src/content/notes/ko/typescript/ts-type-argument-inference.md",
+    "sha256": "b7b0d5396464663adac00f708eae65414478fc77b430ae67a0c40f3ed85fd72e",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        80
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "performative-prediction",
+    "path": "~/projects/portfolio/src/content/notes/ko/AI/performative-prediction/performative-prediction.md",
+    "sha256": "ad19e226568a122c8431b767122fa2ec485aefcd40ffdf66645d3f8e621d4828",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        22,
+        64
+      ],
+      [
+        84,
+        97
+      ],
+      [
+        228,
+        251
+      ],
+      [
+        351,
+        391
+      ],
+      [
+        399,
+        407
+      ]
+    ],
+    "metrics_exit_code": 0
+  },
+  {
+    "id": "bundler-vite-vs-webpack",
+    "path": "~/projects/portfolio/src/content/notes/ko/web/bundler-vite-vs-webpack.md",
+    "sha256": "ba53ce6bb467e334dcab8075b4b4e8d26e0aebb3fdfa9e2665fa32a39beb1b23",
+    "ai_draft_marker": false,
+    "excerpt_ranges": [
+      [
+        23,
+        61
+      ],
+      [
+        80,
+        97
+      ],
+      [
+        294,
+        324
+      ]
+    ],
+    "metrics_exit_code": 0
+  }
+]

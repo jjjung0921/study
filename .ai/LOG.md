@@ -8,7 +8,7 @@
 - State changes: 없음
 - Misconceptions: U2 채점의 두 후보 철회 유지
 - Learner changes: U3 진행 요청; 기존 블로그·U2 답변 보존
-- Needs your attention: 임시 시간 예산·입력 선호는 U4에서 확인. 역할 메모리의 철회 전 추정도 다음 grader 실행 때 갱신.
+- Needs your attention: 임시 시간 예산·입력 선호는 U4에서 확인. 역할 메모리의 철회 전 추정은 2026-11-06 정정.
 
 ## 2026-10-27 · codex · 01/U1 · planned 30m · actual 30m
 

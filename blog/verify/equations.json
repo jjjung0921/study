@@ -1,0 +1,237 @@
+[
+  {
+    "eq_id": 1,
+    "katex": "x",
+    "display": false
+  },
+  {
+    "eq_id": 2,
+    "katex": "z",
+    "display": false
+  },
+  {
+    "eq_id": 3,
+    "katex": "x",
+    "display": false
+  },
+  {
+    "eq_id": 4,
+    "katex": "y=(y_1,\\ldots,y_N)",
+    "display": false
+  },
+  {
+    "eq_id": 5,
+    "katex": "N",
+    "display": false
+  },
+  {
+    "eq_id": 6,
+    "katex": "y_{<i}",
+    "display": false
+  },
+  {
+    "eq_id": 7,
+    "katex": "z",
+    "display": false
+  },
+  {
+    "eq_id": 8,
+    "katex": "Z_K(x)",
+    "display": false
+  },
+  {
+    "eq_id": 9,
+    "katex": "x",
+    "display": false
+  },
+  {
+    "eq_id": 10,
+    "katex": "K",
+    "display": false
+  },
+  {
+    "eq_id": 11,
+    "katex": "K",
+    "display": false
+  },
+  {
+    "eq_id": 12,
+    "katex": "\\eta",
+    "display": false
+  },
+  {
+    "eq_id": 13,
+    "katex": "\\theta",
+    "display": false
+  },
+  {
+    "eq_id": 14,
+    "katex": "p_\\eta(z\\mid x)",
+    "display": false
+  },
+  {
+    "eq_id": 15,
+    "katex": "p_\\theta(y_i\\mid x,z,y_{<i})",
+    "display": false
+  },
+  {
+    "eq_id": 16,
+    "katex": "y_i",
+    "display": false
+  },
+  {
+    "eq_id": 17,
+    "katex": "N",
+    "display": false
+  },
+  {
+    "eq_id": 18,
+    "katex": "y_i",
+    "display": false
+  },
+  {
+    "eq_id": 19,
+    "katex": "y",
+    "display": false
+  },
+  {
+    "eq_id": 20,
+    "katex": "\np_{\\mathrm{Sequence}}(y\\mid x)\n\\approx \\sum_{z\\in Z_K(x)}p_\\eta(z\\mid x)\n\\prod_{i=1}^{N}p_\\theta(y_i\\mid x,z,y_{<i}).\n",
+    "display": true
+  },
+  {
+    "eq_id": 21,
+    "katex": "z",
+    "display": false
+  },
+  {
+    "eq_id": 22,
+    "katex": "y",
+    "display": false
+  },
+  {
+    "eq_id": 23,
+    "katex": "y",
+    "display": false
+  },
+  {
+    "eq_id": 24,
+    "katex": "\np_{\\mathrm{Token}}(y\\mid x)\n\\approx \\prod_{i=1}^{N}\n\\left[\\sum_{z\\in Z_K(x)}p_\\eta(z\\mid x)\np_\\theta(y_i\\mid x,z,y_{<i})\\right].\n",
+    "display": true
+  },
+  {
+    "eq_id": 25,
+    "katex": "x",
+    "display": false
+  },
+  {
+    "eq_id": 26,
+    "katex": "y=(\\text{서울},\\mathrm{EOS})",
+    "display": false
+  },
+  {
+    "eq_id": 27,
+    "katex": "N=2",
+    "display": false
+  },
+  {
+    "eq_id": 28,
+    "katex": "\np_{\\mathrm{Sequence}}(y\\mid x)\n=0.6(0.8\\times0.9)+0.4(0.3\\times0.2)\n=0.456.\n",
+    "display": true
+  },
+  {
+    "eq_id": 29,
+    "katex": "\np_{\\mathrm{Token}}(y\\mid x)\n=(0.6\\times0.8+0.4\\times0.3)\n(0.6\\times0.9+0.4\\times0.2)\n=0.6\\times0.62=0.372.\n",
+    "display": true
+  },
+  {
+    "eq_id": 30,
+    "katex": "(0.8,0.1,0.1)",
+    "display": false
+  },
+  {
+    "eq_id": 31,
+    "katex": "(0.3,0.5,0.2)",
+    "display": false
+  },
+  {
+    "eq_id": 32,
+    "katex": "(0.6,0.26,0.14)",
+    "display": false
+  },
+  {
+    "eq_id": 33,
+    "katex": "(0.05,0.05,0.9)",
+    "display": false
+  },
+  {
+    "eq_id": 34,
+    "katex": "(0.4,0.4,0.2)",
+    "display": false
+  },
+  {
+    "eq_id": 35,
+    "katex": "(0.19,0.19,0.62)",
+    "display": false
+  },
+  {
+    "eq_id": 36,
+    "katex": "\n0.6\\times0+0.4\\times0.5=0.2.\n",
+    "display": true
+  },
+  {
+    "eq_id": 37,
+    "katex": "N=1",
+    "display": false
+  },
+  {
+    "eq_id": 38,
+    "katex": "\n\\sum_{z\\in Z_K(x)}p_\\eta(z\\mid x)\np_\\theta(y_1\\mid x,z).\n",
+    "display": true
+  },
+  {
+    "eq_id": 39,
+    "katex": "z",
+    "display": false
+  },
+  {
+    "eq_id": 40,
+    "katex": "(x,y)",
+    "display": false
+  },
+  {
+    "eq_id": 41,
+    "katex": "j",
+    "display": false
+  },
+  {
+    "eq_id": 42,
+    "katex": "M",
+    "display": false
+  },
+  {
+    "eq_id": 43,
+    "katex": "\\mathcal{L}",
+    "display": false
+  },
+  {
+    "eq_id": 44,
+    "katex": "\n\\mathcal{L}(\\eta,\\theta)\n=-\\sum_{j=1}^{M}\\log p(y^{(j)}\\mid x^{(j)}).\n",
+    "display": true
+  },
+  {
+    "eq_id": 45,
+    "katex": "p",
+    "display": false
+  },
+  {
+    "eq_id": 46,
+    "katex": "y",
+    "display": false
+  },
+  {
+    "eq_id": 47,
+    "katex": "K",
+    "display": false
+  }
+]

@@ -1,0 +1,5 @@
+run_dir=/Users/leejungjin/study/RAG/blog/verify/style-corpus-20261030/ts-type-argument-inference
+combined=/Users/leejungjin/study/RAG/blog/verify/style-corpus-20261030/ts-type-argument-inference/01_input_with_metrics.txt
+risk_band=medium  risk_score=4
+route_hint=heavy
+degraded=False

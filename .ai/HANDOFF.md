@@ -33,7 +33,7 @@ RAG의 발전 과정을 학습하고 AICC 다중 턴 평가 연구로 이어지�
 ## Misconceptions Observed
 
 - 처음 채점 파일에 적힌 두 오개념 후보는 독립 리뷰와 학습자 후속 설명에 따라 철회했다. 확정된 오개념은 없다.
-- `study-grader` 역할 메모리의 `learner-patterns.md`에는 철회 전 추정이 남아 있어 다음 채점 역할 실행 시 exercise와 대조해 갱신해야 한다.
+- `study-grader` 역할 메모리도 학습자 후속 설명과 독립 리뷰에 맞게 정정했다.
 
 ## Open Questions
 
