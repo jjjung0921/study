@@ -41,7 +41,7 @@ AICC용 RAG를 설계하기 전에 문서가 어떻게 선택되고 생성기에
 - [ ] U9. Lost in the Middle로 문맥 사용 한계 확인 — learn · est 20m · requires U8 · Done when: retrieval 성공과 context utilization 실패를 구분
 - [ ] U10. passage fusion 연습 — practice · est 15m · requires U8,U9 · Done when: 처음 보는 다문서 사례 condition exercise pass
 - [ ] U11. 기초 개념 통합 복습 — review · est 15m · requires U5,U7,U10 · Done when: 네 개 concept의 관계를 빈 흐름도에 복원
-- [ ] U12. G1 실패 귀속 capstone — capstone · est 25m · requires U11 · Done when: 새로운 QA 사례 6개의 단계별 진단 transfer exercise pass
+- [ ] U12. G1 실패 귀속 capstone과 다른 날의 개념별 검증 — capstone · est 85m · requires U11 · Done when: 새로운 QA 사례 6개의 단계별 진단 capstone이 pass이고, 네 concept 각각의 별도 transfer exercise가 이전 practice와 다른 날 pass
 
 ## Relevant Documents
 
@@ -60,6 +60,6 @@ AICC용 RAG를 설계하기 전에 문서가 어떻게 선택되고 생성기에
 ## Validation Plan
 
 - U3·U5·U7·U10의 low-cost exercise로 각 개념을 practiced까지 확인한다.
-- U12 transfer와 이후 다른 날의 복습 pass로 verified 조건을 충족한다.
+- U3, U5, U7, U10의 practice 뒤 다른 날 U12에서 네 개 concept의 Rubric-first transfer exercise를 각각 채점한다. capstone은 G1 통합 성취를 확인한다. 미통과 개념은 verified로 올리지 않고 후속 세션에 새 문제를 배치한다.
 - verified 시 `review_due`를 3일 뒤로 설정하고 다음 Phase보다 복습을 우선한다.
 - sandbox 비교는 같은 corpus·query·k를 사용하고 결과를 `evidence/`에 기록한다.
