@@ -2,7 +2,7 @@
 
 | # | Phase | Goal | Concepts | Est (m) | Status | Result |
 |---|---|---|---|---:|---|---|
-| 01 | [orientation](phases/01-orientation/PLAN.md) | 목표·진단·근거 접근·실행 파라미터를 확정한다 | — | 80 | IN_PROGRESS | — |
+| 01 | [orientation](phases/01-orientation/PLAN.md) | 목표, 진단, 근거 접근, 실행 파라미터를 확정한다 | — | 80 | DONE | [결과](phases/01-orientation/RESULT.md) |
 | 02 | [rag-foundations](phases/02-rag-foundations/PLAN.md) | 검색부터 passage fusion까지 기본 정보 흐름을 설명하고 실패를 진단한다 | sparse-dense-retrieval, retriever-reader-pipeline, parametric-nonparametric-memory, passage-fusion | 295 | PLANNED | — |
 | 03 | [reliability-and-evaluation](phases/03-reliability-and-evaluation/PLAN.md) | 검색과 생성의 실패를 분리하고 평가 실험을 구현한다 | retrieval-generation-failures, rag-evaluation, adaptive-retrieval | 360 | PLANNED | — |
 | 04 | [conversational-aicc-rag](phases/04-conversational-aicc-rag/PLAN.md) | 다중 턴과 답변 불가 상황을 포함한 AICC 평가 프로토콜을 설계한다 | conversational-query-context, answerability-abstention, aicc-rag-experiment-design | 300 | PLANNED | — |

@@ -1,5 +1,15 @@
 # Session Log
 
+## 2026-11-07 · codex · 01/U4 · planned 30m · actual 미측정
+
+- Reviews: 만기 없음
+- Units: U4 설정 확인, Phase 01 완료, Phase 02부터 04까지 상세 PLAN 작성
+- Exercises: 없음
+- State changes: 없음
+- Misconceptions: 없음
+- Learner changes: 기본 세션 120분, 말과 손글씨 수식 사진 선호, 월요일과 화요일 제외한 주 2회 학습 반영. 기존 미커밋 학습 근거 변경은 `c832b4b`에 별도 보존.
+- Needs your attention: 목요일 19시와 토요일 14시는 캘린더 배치를 위한 시간 가정. Phase 02 U1 시작 시 실제 가능 여부 확인.
+
 ## 2026-11-02 · codex · 01/U3 · planned 30m · actual 미측정
 
 - Reviews: 만기 없음

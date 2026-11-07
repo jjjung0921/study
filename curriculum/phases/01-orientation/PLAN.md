@@ -1,7 +1,7 @@
 # Phase 01 — orientation
 
-- Status: IN_PROGRESS
-- Start: 2026-10-27 · End: 미정
+- Status: DONE
+- Start: 2026-10-27 · End: 2026-11-07
 - Goals: 전체 목표의 학습 계약 확정
 
 ## Goal
@@ -36,7 +36,7 @@ RAG는 검색·생성·평가·대화 연구가 섞여 있으므로, AICC 연구
 - [x] U1. 학습 워크스페이스 초기화 — setup · est 30m · requires — · Done when: 목표·개념 지도·논문 목록·ROADMAP·Phase 02 PLAN이 주제에 맞게 작성됨 (commit d3eaddc)
 - [x] U2. Prior Knowledge 진단 — practice · est 20m · requires U1 · Done when: LLM·embedding·Python 배경에 대한 low-cost exercise 기록이 있고 결과가 반영됨 (commit db8522f)
 - [x] U3. Phase 02 근거 자료 접근 확인 — learn · est 15m · requires U1 · Done when: survey·DPR·RAG·FiD 원문 접근과 evidence 파일 생성이 완료됨 (commit 0210e0e)
-- [ ] U4. 스크립트·파라미터 확인 — setup · est 15m · requires U1 · Done when: `scripts/study-start.sh 30`과 `scripts/study-end.sh`가 예상 정보를 출력하고 임시 파라미터 확인 요청이 기록됨
+- [x] U4. 스크립트와 파라미터 확인 — setup · est 15m · requires U1 · Done when: `scripts/study-start.sh 30`과 `scripts/study-end.sh`가 예상 정보를 출력하고 학습 파라미터가 확인됨 (commit 205b0b7)
 
 ## Relevant Documents
 
@@ -49,12 +49,12 @@ RAG는 검색·생성·평가·대화 연구가 섞여 있으므로, AICC 연구
 
 ## Acceptance Criteria
 
-- [ ] AC1. G1–G3에 각기 다른 capstone과 Phase가 연결되어 있다.
-- [ ] AC2. 10개 concept의 `requires`와 CONCEPT_MAP이 일치한다.
-- [ ] AC3. 진단 exercise 결과 없이 concept state가 승격되지 않았다.
+- [x] AC1. G1부터 G3까지 각기 다른 capstone과 Phase가 연결되어 있다.
+- [x] AC2. 10개 concept의 `requires`와 CONCEPT_MAP이 일치한다.
+- [x] AC3. 진단 exercise 결과 없이 concept state가 승격되지 않았다.
 - [x] AC4. Phase 02 핵심 논문 네 편의 접근과 서지가 확인됐다.
 - [x] AC5. 세션 예산과 입력 선호가 학습자에게 확인됐다 (2026-11-07: 기본 120분, 말과 손글씨 수식 사진 선호).
-- [ ] AC6. 시작·종료 스크립트가 FAIL 없이 실행된다.
+- [x] AC6. 시작과 종료 스크립트가 FAIL 없이 실행된다.
 
 ## Validation Plan
 
