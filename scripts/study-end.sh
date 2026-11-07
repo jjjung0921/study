@@ -3,12 +3,18 @@
 #
 # 사용법: scripts/study-end.sh                   점검만
 #         scripts/study-end.sh --set-checkpoint  CURRENT.md의 Last Checkpoint를 현재 HEAD로 기록한 뒤 점검
+#         study-end.sh --post-close  close commit 이후 읽기 전용 검증
 # 종료 코드: 0 = 통과, 1 = FAIL 항목 있음 (warn은 통과)
 # 요구:   git 2.22+, bash 3.2+, POSIX awk (macOS 기본 도구 호환)
 
 set -eo pipefail
+case "${1:-}" in ""|--set-checkpoint|--post-close) ;; *) echo "unknown option: $1" >&2; exit 1;; esac
+[ "$#" -le 1 ] || { echo "choose one check mode" >&2; exit 1; }
+post_close=0
+[ "${1:-}" = "--post-close" ] && post_close=1
 # 템플릿 루트 = 이 스크립트의 상위 디렉터리. 더 큰 저장소(예: ~/study vault) 안의 하위 폴더여도 동작한다.
 cd "$(cd "$(dirname "$0")/.." && pwd)"
+python3 scripts/check-workspace.py --allow-no-git || exit 1
 have_git=1; prefix=""
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then prefix=$(git rev-parse --show-prefix); else have_git=0; fi
 
@@ -84,9 +90,11 @@ case "$status" in
   *)                        bad "CURRENT.md Status를 읽을 수 없다: '${status:-}'" ;;
 esac
 
-# 3. Last Checkpoint == HEAD
+# 3. Pre-close: checkpoint == HEAD; post-close: only bookkeeping after checkpoint
 checkpoint=$(section "$CURRENT" "Last Checkpoint" | grep -oE '^`[0-9a-f]{7,40}`$' | head -n1 | tr -d '`' || true)
-if [ "$have_git" -eq 0 ]; then
+if [ "$post_close" -eq 1 ]; then
+  python3 scripts/check-checkpoint.py "$checkpoint" --allow .ai/ --allow curriculum/ || bad "완료 후 checkpoint 검증 실패"
+elif [ "$have_git" -eq 0 ]; then
   :
 elif [ -n "$checkpoint" ] && [ -n "$head_full" ] && [ "${head_full#$checkpoint}" != "$head_full" ]; then
   ok "Last Checkpoint = HEAD ($checkpoint)"
@@ -127,66 +135,20 @@ if [ "${open_items:-0}" -gt 0 ]; then warn "INBOX에 미처리 항목 ${open_ite
 # 8. exercises: pending, grader·result 값
 pending=$(grep -l '^result: pending' exercises/*.md 2>/dev/null | grep -v '_template' || true)
 if [ -n "$pending" ]; then warn "채점 대기 exercise: $(printf '%s' "$pending" | tr '\n' ' ')— 다음 세션 시작에 먼저 채점한다"; else ok "채점 대기 exercise 없음"; fi
-bad_ex=""
+exercise_bad=0
 for f in exercises/*.md; do
   [ -f "$f" ] || continue
-  case "$(basename "$f")" in _template.md|README.md) continue ;; esac
-  r=$(fm "$f" result); g=$(fm "$f" grader); d=$(fm "$f" date)
-  case "$r" in pending|pass|partial|fail) ;; *) bad_ex="${bad_ex}${f}(result '${r}') " ;; esac
-  case "$r" in pass|partial|fail)
-    case "$g" in ""|"<"*) bad_ex="${bad_ex}${f}(grader 없음) " ;; esac ;;
-  esac
-  is_date "$d" || bad_ex="${bad_ex}${f}(date '${d}') "
+  case "$(basename "$f")" in _template.md|README.md) continue;; esac
+  python3 scripts/check-exercise.py check "$f" || exercise_bad=1
 done
-if [ -n "$bad_ex" ]; then bad "exercise frontmatter 오류: $bad_ex"; else ok "exercise frontmatter(result·grader·date) 정상"; fi
+if [ "$exercise_bad" -eq 0 ]; then ok "exercise 구조·채점 근거 정상"; else bad "exercise 채점 근거 검사 실패"; fi
 
-# 9. concepts: state가 exercise 기록으로 정당화되는가 (Rule 8), review_due (Rule 14)
-c_bad=0; c_checked=0
-for f in concepts/*.md; do
-  [ -f "$f" ] || continue
-  case "$(basename "$f")" in _template.md|CONCEPT_MAP.md|MISCONCEPTIONS.md) continue ;; esac
-  c_checked=$((c_checked + 1))
-  st=$(fm "$f" state); vb=$(fm "$f" verified_by)
-  case "$st" in
-    unseen|introduced) continue ;;
-    practiced|verified|stale) ;;
-    *) bad "$f: state '${st:-없음}' — unseen|introduced|practiced|verified|stale 중 하나여야 한다"; c_bad=$((c_bad + 1)); continue ;;
-  esac
-  passes=0; any=0; high=0; dates=" "; missing=""; wrong=""
-  cname=$(fm "$f" name); [ -z "$cname" ] && cname=$(basename "$f" .md)
-  for ex in $(printf '%s' "$vb" | tr ',' ' '); do
-    ex=$(printf '%s' "$ex" | tr -d '`"'"'"' ')
-    [ -z "$ex" ] && continue
-    if [ ! -f "$ex" ]; then missing="$missing $ex"; continue; fi
-    r=$(fm "$ex" result); t=$(fm "$ex" type); d=$(fm "$ex" date); c=$(fm "$ex" concept)
-    if [ "$c" != "$cname" ]; then wrong="$wrong $ex(concept: ${c:-없음})"; continue; fi
-    case "$r" in
-      pass) any=1
-            case "$dates" in *" $d "*) ;; *) passes=$((passes + 1)); dates="${dates}${d} " ;; esac
-            case "$t" in transfer|derivation|proof|coding) high=1 ;; esac ;;
-      partial) any=1 ;;
-    esac
-  done
-  if [ -n "$missing" ]; then bad "$f: verified_by가 가리키는 파일이 없다:$missing"; c_bad=$((c_bad + 1)); continue; fi
-  if [ -n "$wrong" ]; then bad "$f: verified_by의 exercise가 다른 개념의 기록이다:$wrong"; c_bad=$((c_bad + 1)); continue; fi
-  case "$st" in
-    practiced)
-      if [ "$any" -eq 1 ]; then ok "$f: practiced — 근거 있음"; else bad "$f: practiced인데 verified_by에 pass/partial 기록이 없다 (Rule 8)"; c_bad=$((c_bad + 1)); fi ;;
-    verified|stale)
-      if [ "$passes" -ge "$p_passes" ] && [ "$high" -eq 1 ]; then
-        ok "$f: $st — 서로 다른 날 pass ${passes}회, high 유형 포함"
-      else
-        bad "$f: ${st}인데 근거 부족 — 서로 다른 날 pass ${passes}/${p_passes}, transfer·derivation·proof·coding $([ "$high" -eq 1 ] && echo 있음 || echo 없음) (Rule 8)"; c_bad=$((c_bad + 1))
-      fi
-      if [ "$st" = "verified" ]; then
-        due=$(fm "$f" review_due); von=$(fm "$f" verified_on)
-        is_date "$due" || { bad "$f: verified인데 review_due가 없다 (Rule 14)"; c_bad=$((c_bad + 1)); }
-        is_date "$von" || warn "$f: verified_on이 비어 있다"
-      fi ;;
-  esac
-done
-[ "$c_checked" -eq 0 ] && ok "concepts 없음 (초기화 전)"
-[ "$c_checked" -gt 0 ] && [ "$c_bad" -eq 0 ] && ok "concepts ${c_checked}개 state–근거 일치"
+# 9. concepts: 전체 exercise 장부와 상태·복습 이력 대조 (Rule 8·14)
+if python3 scripts/check-exercise.py ledger; then
+  ok "concepts 전체 채점 이력·state 대조"
+else
+  bad "concepts 채점 이력·state 대조 실패"
+fi
 
 # 10. 크기 상한 (Rule 13)
 cap "CURRENT.md 줄 수" "$(lines "$CURRENT")" 40

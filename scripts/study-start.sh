@@ -10,6 +10,7 @@
 set -eo pipefail
 # 템플릿 루트 = 이 스크립트의 상위 디렉터리. 더 큰 저장소(예: ~/study vault) 안의 하위 폴더여도 동작한다.
 cd "$(cd "$(dirname "$0")/.." && pwd)"
+python3 scripts/check-workspace.py --allow-no-git || exit 1
 have_git=1; prefix=""
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then prefix=$(git rev-parse --show-prefix); else have_git=0; fi
 
@@ -162,11 +163,14 @@ fi
 
 # --- 6. 개념 상태 · 복습 만기 · 오개념 ---
 echo
-n_unseen=0; n_intro=0; n_prac=0; n_ver=0; n_stale=0; n_due=0; due_lines=""
+n_unseen=0; n_intro=0; n_prac=0; n_ver=0; n_stale=0; n_due=0; n_draft=0; due_lines=""; draft_lines=""
 for f in concepts/*.md; do
   [ -f "$f" ] || continue
   case "$(basename "$f")" in _template.md|CONCEPT_MAP.md|MISCONCEPTIONS.md) continue ;; esac
   st=$(fm "$f" state); name=$(fm "$f" name); [ -z "$name" ] && name=$(basename "$f" .md)
+  if grep -qE '<!--[[:space:]]*/?ai:draft[[:space:]]*-->' "$f"; then
+    n_draft=$((n_draft + 1)); draft_lines="${draft_lines}  ${name} (${f}, state ${st:-없음})"$'\n'
+  fi
   case "$st" in
     unseen)     n_unseen=$((n_unseen + 1)) ;;
     introduced) n_intro=$((n_intro + 1)) ;;
@@ -188,6 +192,8 @@ for f in concepts/*.md; do
   esac
 done
 echo "concepts: unseen ${n_unseen} · introduced ${n_intro} · practiced ${n_prac} · verified ${n_ver} · stale ${n_stale}"
+echo "draft review pending: ${n_draft}"
+if [ -n "$draft_lines" ]; then printf '%s' "$draft_lines"; else echo "  (없음)"; fi
 echo "review due (Rule 14 — 새 unit보다 먼저):"
 if [ -n "$due_lines" ]; then printf '%s' "$due_lines"; else echo "  (없음)"; fi
 active_misc=$(grep -E '^\| *[0-9]{4}-[0-9]{2}-[0-9]{2}' "$MISC" 2>/dev/null | grep -c '| *active *|' || true)

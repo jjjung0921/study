@@ -8,10 +8,12 @@ cost: <low | high>
 est: <분>
 actual:
 grader: <agent-name>
+review_order:
 result: pending
 ---
 
 <!-- 파일명 YYYY-MM-DD-<concept>-<type>.md. 유형·등급·후처리는 exercises/README.md. 100줄 상한. 작성 지침 주석은 채우면서 지운다. -->
+<!-- review_order는 purpose: review에서만 concept별 완료 순서. pending 동안 비워 둔다(DR-0008). -->
 
 # <문제 제목>
 
@@ -53,6 +55,12 @@ result: pending
 
 - Result: <pass | partial | fail>
 - Misconception: <없음 / 학습자 표현 → MISCONCEPTIONS.md 반영>
+
+## Grader Run
+
+<!-- 채점 완료 시 런타임 실행 기록을 연결한다. pending이면 "대기 중". 튜터의 자기신고로 실행 기록을 만들지 않는다(DR-0008). -->
+
+- [채점 실행 기록](../.ai/grading/runs/{exercise-file}-run.md)
 
 ## Next
 

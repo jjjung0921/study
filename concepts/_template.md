@@ -13,11 +13,12 @@ last_reviewed:
 
 <!--
 파일명은 `<slug>.md` (kebab-case). frontmatter는 스크립트가 읽는다 — key 이름을 바꾸지 않고 리스트는 한 줄 `[a, b]`로 쓴다.
-- state: unseen | introduced | practiced | verified | stale — exercise 기록으로만 바뀐다 (Rule 8). 승격 조건은 AGENTS.md.
+- state: unseen | introduced | practiced | verified | stale — introduced는 학습자가 Definition·Claims·Verification Criteria 초안을 검토하고 ai:draft 마킹을 모두 걷은 뒤, practiced 이상은 exercise 기록으로만 바뀐다 (Rule 8).
 - requires: 같은 subject 안의 선행 개념 slug만. CONCEPT_MAP.md와 일치. 다른 subject의 개념은 evidence로 가리킨다 (`~/study/<other>/concepts/<slug>.md`).
 - evidence: 이 개념이 맞다는 근거 — `evidence/<slug>.md#<위치>` (Claims의 포인터와 일치).
-- verified_by: state의 근거 — `exercises/<file>.md`. pass(또는 practiced는 partial) 기록만.
+- verified_by: practiced 이상의 근거 — `exercises/<file>.md`. pass(또는 practiced는 partial) 기록만.
 - verified_on · review_stage · review_due · last_reviewed: Rule 14. review_due = last_reviewed(또는 verified_on) + review_intervals[review_stage].
+- Review History: 복습 완료 순서와 판정·상태 영향의 근거 링크. `last_reviewed`는 날짜이고 상세 근거는 이 절에 둔다(DR-0008).
 150줄 상한. 긴 유도·계산은 evidence/·sandbox/로.
 -->
 
@@ -25,7 +26,7 @@ last_reviewed:
 
 ## Definition
 
-<!-- 튜터가 초안을 쓰고 ai:draft 마킹으로 감싼다 (Rule 4, DR-0006). 학습자가 검토(수정 또는 INBOX `검토: OK <slug>`)하면 마킹을 걷는다 — 그때 introduced. 마킹이 남은 절은 미검토다. 학습자가 고친 문장은 지우지 않고 Revisions에 남긴다. -->
+<!-- 튜터가 Definition·Claims·Verification Criteria 초안을 각각 ai:draft 마킹으로 감싼다 (Rule 4, DR-0006). 학습자가 모두 검토(수정 또는 INBOX `검토: OK <slug>`)하면 마킹을 걷는다 — 그때 introduced. 마킹이 남은 절은 미검토다. 학습자가 고친 문장은 지우지 않고 Revisions에 남긴다. -->
 
 <!-- ai:draft -->
 <한 문단. "…는 …이다. …일 때 성립하고, …를 위해 쓴다.">
@@ -42,19 +43,23 @@ last_reviewed:
 <!-- 이 개념에 대해 참이라고 믿는 진술. 초안은 튜터가 쓰고 ai:draft로 감싼다(검토 후 걷는다). 각 줄에 근거 라벨과 evidence 포인터 (Rule 7).
 [fact] 출처 명시 · [derived] 근거 기반 유도(sandbox·evidence의 derivation) · [assumption] 가정 · [hypothesis] 가설 · [unsupported] 근거 부족 -->
 
+<!-- ai:draft -->
 - [fact] <진술> — `evidence/<slug>.md#<정리·식 번호>`
 - [derived] <진술> — `sandbox/<file>` 또는 `evidence/<derivation>.md`
 - [unsupported] <아직 확인하지 못한 진술>
+<!-- /ai:draft -->
 
 ## Verification Criteria
 
 <!-- 이 개념을 이해했다고 볼 기준. exercise의 Rubric은 여기서 파생된다 (DR-0002). 3–6개. 학습자가 한 번 검토한다.
 정의 암기가 아니라 "말할 수 있다 / 판별할 수 있다 / 계산할 수 있다 / 새 조건에 쓸 수 있다"로. -->
 
+<!-- ai:draft -->
 - [ ] C1. <조건: 이 개념이 성립하려면 무엇이 필요한지 말할 수 있다>
 - [ ] C2. <판별: 주어진 상황에서 적용 가능 여부를 판단할 수 있다>
 - [ ] C3. <계산: 구체적 예에서 …를 계산할 수 있다>
 - [ ] C4. <전이: 처음 보는 문제에 …를 세울 수 있다>
+<!-- /ai:draft -->
 
 ## Connections
 
@@ -73,3 +78,9 @@ last_reviewed:
 <!-- Definition을 고친 이력. 이전 문장을 지우지 않는다. 튜터 초안 → 학습자 수정도 여기에 남긴다. -->
 
 - <YYYY-MM-DD> "<이전 문장>" → "<수정>" — 근거: `exercises/<file>.md`
+
+## Review History
+
+<!-- 맨 아래에 review_order 순서대로 추가한다. exercise의 Grading 절을 근거로 링크하고, fail→stale 또는 pass→verified 같은 상태 영향을 적는다. 복습이 없으면 "없음". -->
+
+- {review_order}. {date} [{review pass 또는 fail}](../exercises/{exercise-file}.md) — 근거: {Rubric 항목과 Attempt에서 확인된 핵심}; 상태: {변경 또는 유지}

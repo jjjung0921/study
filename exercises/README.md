@@ -5,6 +5,7 @@ exercise 기록은 이해 상태의 근거다 (Rule 8, DR-0002). 파일 하나 =
 - 파일명: `YYYY-MM-DD-<concept>-<type>.md`. 같은 날 같은 개념·유형이 둘이면 `-2`를 붙인다. 양식은 `_template.md`.
 - 문제와 Rubric을 먼저 쓰고, 답을 받아 전사·확인한 뒤, 항목별로 판정한다. `result`가 `pending`인 파일은 다음 세션에 이어서 채점한다(시차 채점).
 - 손글씨 사진은 `_inbox/YYYY-MM-DD-<concept>.jpg`에 넣고 `.ai/INBOX.md`에 파일명을 적는다. `_inbox/`는 gitignore이며, 전사만 커밋한다 (Rule 10).
+- 상태 근거로 쓰는 기록은 계획된 Rubric-first exercise다. 학습자가 요청한 `self-exam` 묶음 퀴즈와 `min_session`의 회상 질문은 이 폴더에 넣지 않는다. 진단(`purpose: diagnostic`) 결과는 개념 상태 승격에 사용하지 않는다(DR-0008).
 
 ## Types
 
@@ -36,6 +37,7 @@ exercise 기록은 이해 상태의 근거다 (Rule 8, DR-0002). 파일 하나 =
 | cost      | low · high                                           |
 | est / actual | 분                                                |
 | grader    | 채점한 Agent 이름 (커밋 trailer와 같은 값)           |
+| review_order | `purpose: review` 완료 순서. concept별 1부터 증가하며 그 밖에는 비움 |
 | result    | pending · pass · partial · fail                      |
 
 ## Grading Scale
@@ -47,7 +49,15 @@ exercise 기록은 이해 상태의 근거다 (Rule 8, DR-0002). 파일 하나 =
 
 ## After Grading
 
-1. concept 파일: `verified_by`에 추가(pass·partial), state 승격 조건 확인(Rule 8), verified면 `verified_on`·`review_due`, 복습이면 `review_stage`·`last_reviewed`·`review_due` (Rule 14)
+1. concept 파일: 승격에 쓴 pass·partial은 `verified_by`에 추가한다. review는 `review_order` 순서대로 맨 아래 `Review History`에 exercise 상대 링크와 Rubric·Attempt 근거, 상태 영향을 기록한다. state 승격 조건(Rule 8)을 확인한 뒤 verified면 `verified_on`·`review_due`, 복습이면 `review_stage`·`last_reviewed`·`review_due`를 갱신한다(Rule 14, DR-0008). `check-exercise.py ledger`가 전체 채점 이력과 복습 순서를 검사한다.
 2. 오개념이 보이면 `concepts/MISCONCEPTIONS.md`에 한 줄 + concept의 Misconceptions
 3. PLAN의 unit이 완료되면 `[x]`와 근거 파일명
 4. `.ai/LOG.md`의 Exercises·State changes 줄
+
+## Executable grading boundary
+
+Before invoking the independent grader, the tutor runs `python3 scripts/check-exercise.py prepare exercises/{attempt}.md` after obtaining the learner's actual transcript confirmation. This saves hashes of Problem/Rubric/Attempt under `.ai/grading/`; it never creates the confirmation itself. Include the snapshot with the exercise in the content commit. A changed answer or rubric requires a new attempt file, not overwriting the snapshot.
+
+After grading, run `python3 scripts/check-exercise.py check exercises/{attempt}.md`. `pending` remains valid without a response. Graded results require the snapshot, a grader, one row per numbered Rubric item, ✓/✗, an exact double-quoted Attempt excerpt, matching Result, Next, and the Grader Run link. `study-end.sh` reuses this validator and runs `ledger`. The checks verify record structure and provenance links, not mathematical correctness or authentic human confirmation. A historical diagnostic without a snapshot can be marked `legacy_unverified: true`; it remains history only and never becomes state evidence. Never fabricate a retrospective snapshot or reclassify it as verified automatically.
+
+채점 완료 파일의 `Grader Run` 절은 `.ai/grading/runs/`의 실행 기록을 상대 링크로 가리킨다. 그 기록에는 exercise 경로, `prepare` snapshot 해시, 튜터·채점자 역할, 실제 CLI 또는 서브에이전트 호출과 런타임 식별자, 완료 결과와 원출력 위치를 담는다. `check`가 링크의 존재와 snapshot·결과 일치를 확인한다. 기존 기록에 실행 증거를 소급해서 만들지 않는다(DR-0008).

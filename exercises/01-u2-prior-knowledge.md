@@ -8,6 +8,7 @@ cost: low
 est: 20
 actual:
 grader: study-grader
+legacy_unverified: true
 result: fail
 ---
 
@@ -64,4 +65,4 @@ result: fail
 - State: 진단이라 바뀌지 않음.
 - Review: 설정 없음.
 - Next exercise: 필요한 경우 condition(내적·코사인 유사도의 정규화 조건과 근거 적합성) 또는 numeric(점수의 argmax와 문서 인덱스 대응).
-- 형식: 이 파일에는 frontmatter·(필수) 표시가 없어 템플릿과 다름. `scripts/check-exercise.py`가 없어 snapshot·check 단계는 하지 않음.
+- 형식: 이 기록은 새 `prepare` 스냅샷과 채점 실행 기록이 도입되기 전에 채점됐다. `legacy_unverified: true`로 진단 이력만 보존하며 concept state의 근거로 쓰지 않는다. 스냅샷과 실행 증거를 소급 생성하지 않는다.

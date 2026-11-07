@@ -17,6 +17,8 @@ scripts/study-start.sh 30
 
 현재 계획은 [curriculum/ROADMAP.md](curriculum/ROADMAP.md), 논문 목록은 [evidence/INDEX.md](evidence/INDEX.md), 개념 선행 관계는 [concepts/CONCEPT_MAP.md](concepts/CONCEPT_MAP.md)에 있다.
 
+학습 상태는 [채점 기록](exercises/README.md)에서 확인한다. 진단은 학습 경로를 조정할 때만 쓰며, 계획된 practice와 verify의 독립 채점이 개념 상태 승격의 근거다. 같은 날 복습의 순서는 `review_order`로 남기고, 개념 파일 하단에 복습 판정 근거를 연결한다. [DR-0008](curriculum/decisions/DR-0008-learning-evidence-boundaries.md)에 적용 규칙과 기존 진단 기록의 이행 경계를 적었다. [track/plan.md](track/plan.md)는 Phase 진행을 보는 보조 목록이다.
+
 ## 완료 산출물
 
 - RAG 발전 계보를 검색·결합·평가·대화의 관점에서 설명한 개념 지도
