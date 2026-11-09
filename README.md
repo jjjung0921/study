@@ -11,6 +11,8 @@ Retrieval-Augmented Generation(RAG)의 발전 과정을 원 논문으로 따라�
 
 ## 시작 방법
 
+다른 컴퓨터에서는 [Codex Cloud 학습 안내](notes/cloud-study.md)를 따라 저장소와 중단 지점을 이어받는다.
+
 ```sh
 scripts/study-start.sh 30
 ```
