@@ -1,7 +1,7 @@
 # Phase 02 — rag-foundations
 
-- Status: PLANNED
-- Start: 미정 · End: 미정
+- Status: IN_PROGRESS
+- Start: 2026-11-07 · End: 미정
 - Goals: G1
 
 ## Goal
@@ -30,11 +30,11 @@ AICC용 RAG를 설계하기 전에 문서가 어떻게 선택되고 생성기에
 
 ## Units
 
-- [ ] U1. RAG survey의 분류와 전체 정보 흐름 읽기 — learn · est 20m · requires — · Done when: 발전 흐름을 검색·결합·평가·대화 네 축으로 요약
-- [ ] U2. sparse·dense retrieval 도입과 DPR 근거 읽기 — learn · est 25m · requires U1 · Done when: `concepts/sparse-dense-retrieval.md` 초안과 evidence 포인터 작성
-- [ ] U3. sparse·dense retrieval 연습 — practice · est 15m · requires U2 · Done when: condition 또는 numeric exercise pass
-- [ ] U4. retriever–reader pipeline 도입 — learn · est 20m · requires U2 · Done when: 단계 경계와 실패 위치를 concept 초안에 기록
-- [ ] U5. retriever–reader 실패 진단 — practice · est 15m · requires U3,U4 · Done when: error-spot exercise pass
+- [x] U1. RAG survey의 분류와 전체 정보 흐름 읽기 — learn · est 20m · requires — · Done when: 발전 흐름을 검색·결합·평가·대화 네 축으로 요약 (요약: `evidence/gao-2023-rag-survey.md`의 U1 Learning Map; commit 2f04d9f)
+- [x] U2. sparse·dense retrieval 도입과 DPR 근거 읽기 — learn · est 25m · requires U1 · Done when: `concepts/sparse-dense-retrieval.md` 초안과 evidence 포인터 작성 (초안과 근거 작성 및 Sections 3.1-3.2 문답 완료; commit 2f04d9f)
+- [x] U3. sparse·dense retrieval 연습 — practice · est 15m · requires U2 · Done when: 답안 제출과 전사 확인, 독립 채점 및 별도 리뷰, 피드백 보완과 학습자 검토 완료 (최초 exercise: `exercises/2026-11-09-sparse-dense-retrieval-condition.md`, partial 유지; 보완: `notes/sparse-dense-retrieval.md`; DR-0010; commit 2f04d9f)
+- [x] U4. retriever–reader pipeline 도입 — learn · est 20m · requires U2 · Done when: 단계 경계와 실패 위치를 concept 초안에 기록 (concept 및 `notes/retriever-reader-pipeline.md` 초안 작성, DPR Introduction과 Section 2 읽기 안내 및 문답; commit 2f04d9f)
+- [x] U5. retriever–reader 실패 진단 — practice · est 15m · requires U3,U4 · Done when: 답안 제출과 전사 확인, 독립 채점 및 별도 리뷰, 피드백 보완과 학습자 검토 완료 (최초 exercise: `exercises/2026-11-09-retriever-reader-pipeline-error-spot.md`, partial 유지; 보완: `notes/retriever-reader-pipeline.md`; DR-0011; commit 2f04d9f)
 - [ ] U6. 원 RAG의 parametric·non-parametric memory 읽기 — learn · est 25m · requires U4 · Done when: RAG-Sequence와 RAG-Token의 차이를 근거 위치와 기록
 - [ ] U7. memory 경계 연습 — practice · est 15m · requires U6 · Done when: 정책 갱신 사례 condition exercise pass
 - [ ] U8. FiD와 passage fusion 읽기 — learn · est 25m · requires U6 · Done when: fusion 위치와 top-k 역할을 concept 초안에 기록
@@ -49,6 +49,8 @@ AICC용 RAG를 설계하기 전에 문서가 어떻게 선택되고 생성기에
 - `concepts/CONCEPT_MAP.md` — Phase 02 subgraph
 - `evidence/INDEX.md` — survey, DPR, RAG, FiD, Lost in the Middle
 - `curriculum/decisions/DR-0007-rag-scope-and-reading-path.md`
+- [DR-0010: U3 종료와 exercise 통과 구분](../../decisions/DR-0010-u3-completion-after-feedback.md)
+- [DR-0011: U5 종료와 exercise 통과 구분](../../decisions/DR-0011-u5-completion-after-feedback.md)
 
 ## Acceptance Criteria
 
@@ -60,6 +62,8 @@ AICC용 RAG를 설계하기 전에 문서가 어떻게 선택되고 생성기에
 ## Validation Plan
 
 - U3·U5·U7·U10의 low-cost exercise로 각 개념을 practiced까지 확인한다.
+- U3는 DR-0010에 따라 피드백 보완과 학습자 검토까지 마치면 종료할 수 있다. 최초 partial을 pass로 바꾸거나 unit 완료만으로 concept state를 승격하지 않는다. 이후 검증에서 실제 pass 횟수를 확인하고 부족하면 별도 날의 새 exercise로 보충한다.
+- U5에도 DR-0011에 따라 같은 종료 방식을 적용한다. 최초 partial과 concept 검증 요구는 유지한다.
 - U3, U5, U7, U10의 practice 뒤 다른 날 U12에서 네 개 concept의 Rubric-first transfer exercise를 각각 채점한다. capstone은 G1 통합 성취를 확인한다. 미통과 개념은 verified로 올리지 않고 후속 세션에 새 문제를 배치한다.
 - verified 시 `review_due`를 3일 뒤로 설정하고 다음 Phase보다 복습을 우선한다.
 - sandbox 비교는 같은 corpus·query·k를 사용하고 결과를 `evidence/`에 기록한다.

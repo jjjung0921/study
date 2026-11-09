@@ -1,5 +1,14 @@
 # Session Log
 
+## 2026-11-09 · codex · 02/U3 · planned 120m · actual 미측정
+
+- Units: U1부터 U5까지 학습 절차 완료. 학습자 요청으로 U3는 DR-0010, U5는 DR-0011의 보완 및 검토 기준으로 종료. U6 대기
+- Exercises: U3 condition partial, U5 error-spot partial (R1 ✗, R2 ✓, R3 ✗, R4 ✓); 각각 Claude 채점과 별도 Codex 리뷰 일치, check 통과
+- State changes: 없음. sparse-dense-retrieval과 retriever-reader-pipeline 모두 초안 전체 검토 미확인으로 unseen 유지
+- Misconceptions: DPR의 단어 단위 유사성 서술을 미확인 후보로 기록
+- Learner changes: 답안 전사 확인, 재로그인 완료, U3와 U5의 보완 반영 및 종료 요청
+- Needs your attention: U3 완료와 exercise partial은 별개다. Phase 검증 시 부족한 독립 pass를 확보하며 보완본을 소급 재채점하지 않는다.
+
 ## 2026-11-07 · codex · 01/U4 · planned 30m · actual 미측정
 
 - Reviews: 만기 없음
@@ -29,3 +38,10 @@
 - Misconceptions: 없음
 - Learner changes: RAG 발전 survey와 AICC 연구 연결 요청 반영
 - Needs your attention: 30분 예산·입력 선호는 임시값이며 U2 시작 전에 확인 필요
+
+### 2026-11-09 — 클라우드 학습 준비
+
+- 요청: 다른 컴퓨터에서 Codex Cloud로 학습 재개.
+- 기록: U1–U5 문답·채점 근거와 U6 설명을 `2f04d9f`에 저장, 재개 안내 `notes/cloud-study.md`.
+- 검증: workspace 경계와 diff 검사 통과. exercise ledger 오류 0, 기존 legacy 경고 1.
+- 경계: U6 읽기·학습 상태 변경 없음. GitHub push 승인 대기, 시간 추적 코드 변경 보존.
